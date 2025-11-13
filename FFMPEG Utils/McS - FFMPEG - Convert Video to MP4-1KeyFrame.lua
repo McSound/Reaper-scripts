@@ -1,29 +1,9 @@
- --@ description:
- --@ version:1.0
- --@ author: McSound
- --@ repository: https://github.com/McSound/Reaper-scripts/raw/master/index.xml
- --@ licence: GPL v3
- --@ forum thread:
- --@ Reaper 7.45
- --@ instructions:
- 
---[[
- * Changelog:
- * v1.1 (2015-06-12)
-  # Modification
-  + Addition
-  - Deletion
- * v1.0 (2015-02-27)
-  + Initial Release
---]]
-
 local r = reaper
 
 local windows = string.find(r.GetOS(), "Win") ~= nil
 local sep = package.config:sub(1,1)
 local reaper_path = r.GetResourcePath()
 
-local mrp_window
 
 function Msg(str) r.ShowConsoleMsg(tostring(str) .. "\n") end
 
@@ -39,71 +19,77 @@ if not r.file_exists(ffmpeg_file) then
   return
 end
 
-function file_codec(command,txt_file)
-  if windows then
-    local master_command = command
-    master_command = 'cmd.exe /C "'..command..'"'
-    local retval = r.ExecProcess( master_command, 0 ) -- save 'video_info.txt'
+function output_file_already_exists(output_file)
+  local fv = io.open(output_file)
+  if fv then 
+    fv:close()
+    return true
   else
-    os.execute(command)
+    return false
   end
-  
-  local f = io.open(txt_file) -- check in 'video_info.txt' if video_file's codec is dnxhd
-  local file_lines = {}
-  local i = 1
-  for line in f:lines() do
-    file_lines[i] = line
-    i = i + 1
-  end
-  f:close()
-  local codec, res, fps, bitrate = file_lines[1]:match("(.+);(.+;.+);(.+);(.+)")
-
-  return codec
 end
 
 function execute(path, name, ext, track, pos, item)
-  -- local sep = windows and '\\' or '/'
-
-  -- local reaper_path = r.GetResourcePath()
-  local video_file = path..sep..name.."."..ext
-  local output_file = path..sep..name.."-DNxHD36.mov"
-  -- local arguments1 = " -v error -select_streams v:0 -show_entries stream=codec_name -of csv=s=;:p=0 "
+  
+  local video_file = path..name.."."..ext
+  local output_file = path..name.."-KF1.mp4"
+  
+  -- local arguments1 = " -v error -select_streams v:0 -show_entries stream=codec_name,width,height -of csv=s=;:p=0 "
   -- local txt_file = reaper_path..sep..'Scripts'..sep..'McSound'..sep..'video_info.txt'
   -- local ffprobe_file = reaper_path..sep..'UserPlugins'..sep..(windows and 'ffprobe.exe' or 'ffprobe')
   -- local command1 = '"'..ffprobe_file..'"'..arguments1..'"'..video_file..'"'..' >'..'"'..txt_file..'"'
 
+  -- if windows then
+    -- local retval = r.ExecProcess(command1, 0)
+    -- if retval== "NULL" then Msg("Something's gone really wrong") end
+  -- else
+    -- os.execute(command1)
+  -- end
+-- 
+  -- local f = io.open(txt_file)
+  -- local file_lines = {}
+  -- local i = 1
+  -- for line in f:lines() do file_lines[i] = line i = i + 1 end
+  -- f:close()
+  -- local codec, width, height, fps, bitrate = "","","","",""
+  -- if #file_lines~=0 then
+    -- codec, width, height, fps, bitrate = file_lines[1]:match("(.+);(.+);(.+);(.+);(.+)")
+  -- end
+
+
   local name_low = string.lower(name)
   local input_file_codec = ""
-  if name_low:find("dnxhd") then
-    input_file_codec = "dnxhd"
+  if name_low:find("-1kf") then
+    input_file_codec = "-1kf"
   end
 
-  if item==nil and input_file_codec == "dnxhd" then
+  if item==nil and input_file_codec == "-1kf" then
     r.InsertMedia(video_file, 0)
     r.Main_OnCommand(41174, 0) --Item navigation: Move cursor to end of items
-  elseif item==nil and input_file_codec ~= "dnxhd" and r.file_exists(output_file) then
+  elseif item==nil and input_file_codec ~= "-1kf" and output_file_already_exists(output_file) then
     r.InsertMedia(output_file, 0)
     r.Main_OnCommand(41174, 0) --Item navigation: Move cursor to end of items
-  elseif item~=nil and input_file_codec ~= "dnxhd" and r.file_exists(output_file) then
+  elseif item~=nil and input_file_codec ~= "-1kf" and output_file_already_exists(output_file) then
     r.DeleteTrackMediaItem(track, item)
     r.SetOnlyTrackSelected(track)
     r.SetEditCurPos(pos, false, false)
     r.InsertMedia(output_file, 0)
-  elseif input_file_codec ~= "dnxhd" then
-    local arguments2 = ' -c:v dnxhd -vf "scale=1920:1080,format=yuv422p" -b:v 36M -c:a pcm_s16le -map 0 '
-    local command2 = '"'..ffmpeg_file..'"'.." -n -i "..'"'..video_file..'"'..arguments2..'"'..output_file..'"'
+  elseif input_file_codec ~= "-1kf" then
 
-    Msg(command2)
-
+    local arguments2 = ' -vcodec libx264 -x264-params keyint=1:scenecut=0 -acodec copy '
+    local command2 = '"'..ffmpeg_file..'"'.." -i "..'"'..video_file..'"'..arguments2..'"'..output_file..'"'
+  
     if item ~= nil then
       r.DeleteTrackMediaItem(track, item)
     end
-    
+
     if windows then
       local retval = r.ExecProcess(command2, 0)
+      if retval== "NULL" then Msg("Something's gone really wrong") end
     else
       os.execute(command2)
     end
+
     if item ~= nil then
       r.SetOnlyTrackSelected(track)
       r.SetEditCurPos(pos, false, false)
@@ -115,7 +101,7 @@ end
 
 function Main()
   local time = r.time_precise()
-  
+
   local cursor_pos_init = r.GetCursorPosition()
   local track_init = r.GetSelectedTrack(0,0) or r.GetTrack(0, 0)
   local count_sel_items = r.CountSelectedMediaItems(0)
@@ -131,23 +117,20 @@ function Main()
         local type = r.GetMediaSourceType(source, "")
         local path_name = tostring(r.GetMediaSourceFileName(source))
         local path, name, ext = string.match(path_name, "(.-)([^\\]-)%p([^%.]+)$")
-        path = path:match("(.+)\\$")
         if string.lower(ext)=="m4a" then
           type = "AUDIO"
         end
         if type ~= "VIDEO" then
+          Msg("It's not a valid VIDEO file")
         else
           local name_low = string.lower(name)
-          if not name_low:find("dnxhd") then
+          if not name_low:find("-kf1") then
             v_items[#v_items+1] = {item=item, track=track, pos=pos, path=path, name=name, ext=ext}
           end
         end
       end
     end
 
-    -- r.ShowMessageBox("Please wait...", "Processing files", 0)
-    -- mrp_window = r.MRP_CreateWindow("Processing files")
-    -- r.MRP_SetControlBounds(mrp_window, "Processing files", 960, 540, 200, 100)
     for i=1,#v_items do
       execute(v_items[i].path, v_items[i].name, v_items[i].ext, v_items[i].track, v_items[i].pos, v_items[i].item)
     end
@@ -162,7 +145,6 @@ function Main()
     if track ~= nil then
       if not fileNames:match("\0") then -- single file selected?
         local path, name, ext = string.match(fileNames, "(.-)([^\\]-)%p([^%.]+)$")
-        path = path:match("(.+)\\$")
         v_items[1] = {path=path, name=name, ext=ext}
       else -- multiple files selected
         local path = fileNames:match("^[^\0]*") -- if macOS, may be empty string, so use *
@@ -175,22 +157,15 @@ function Main()
       end
 
       if #v_items > 0 then
-        -- r.ShowMessageBox("Please wait...", "Processing files", 0)
-        -- mrp_window = r.MRP_CreateWindow("Processing files")
-        -- r.MRP_SetControlBounds( mrp_window, "Processing files", 960, 540, 200, 100)
         for i=1, #v_items do
-
           execute(v_items[i].path, v_items[i].name, v_items[i].ext, track , pos, nil)
         end
       end
     end
   end
+
   local time_msg = "Done!\nTime processing: ".. r.time_precise() - time
   Msg(time_msg)
-
-  -- local msg_hwnd = r.JS_Window_Find("Processing files", true)
-  -- r.JS_WindowMessage_Send(msg_hwnd, "WM_CLOSE")
-  -- r.MRP_DestroyWindow(mrp_window)
 
 end
 
