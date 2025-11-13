@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="McSound - Reaper Scripts Repository" commit="12eac818f36b2b0a19aa4d12922d83c0574f0179">
+<index version="1" name="McSound - Reaper Scripts Repository" commit="2845f03843bfab292161dde8b410a95430062743">
   <category name="Example">
     <reapack name="cfillion_Hello world.lua" type="script" desc="Hello world">
       <metadata>
@@ -18,6 +18,18 @@ Markdown
       </metadata>
       <version name="1.0" author="McSound" time="2021-01-04T23:30:32Z">
         <source main="main">https://github.com/cfillion/reapack-repository-template/raw/58a3e39ba95bd0f35846aa1f39aa4cb2574295e1/Example/cfillion_Hello%20world.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="FFMPEG Utils">
+    <reapack name="McS - FFMPEG - Convert Video to DNxHD36.lua" type="script">
+      <version name="1.0" author="McSound" time="2025-11-13T11:45:55Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/2845f03843bfab292161dde8b410a95430062743/FFMPEG%20Utils/McS%20-%20FFMPEG%20-%20Convert%20Video%20to%20DNxHD36.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - FFMPEG - Implode Mono WAVs to Multichannel WAV.lua" type="script">
+      <version name="1.0" author="McSound" time="2025-11-13T11:45:55Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/2845f03843bfab292161dde8b410a95430062743/FFMPEG%20Utils/McS%20-%20FFMPEG%20-%20Implode%20Mono%20WAVs%20to%20Multichannel%20WAV.lua</source>
       </version>
     </reapack>
   </category>
