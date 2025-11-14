@@ -11,4 +11,4 @@ avutil-60.dll
 swresample-6.dll
 swscale-9.dll) 
  
-So script would use them instead of ones in UserPluging folder.
+So script would use them instead of ones in \UserPlugins folder.
