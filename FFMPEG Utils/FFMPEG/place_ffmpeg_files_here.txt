@@ -1,5 +1,5 @@
-If you want latest ffmpeg version, place its compiled files here in FFMPEG subfolder,
-(for instance - 
+If you want scripts to use the latest ffmpeg version, place its compiled files here in FFMPEG subfolder,
+(like that - 
 ffmpeg.exe
 ffplay.exe
 ffprobe.exe
