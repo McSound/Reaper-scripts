@@ -1,6 +1,6 @@
 # McSound scripts for Reaper Repository
 
-MPL contacts:
+My contacts:
 - [Telegram](https://t.me/VadimKruglo)
 
 
