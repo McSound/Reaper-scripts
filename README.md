@@ -2,8 +2,6 @@
 
 MPL contacts:
 - [Telegram](https://t.me/VadimKruglo)
-- [Cockos Forum](https://forum.cockos.com/showthread.php?t=188335)
-
 
 
 
