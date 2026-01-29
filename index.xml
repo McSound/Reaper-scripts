@@ -39,6 +39,11 @@ Markdown
 \widowctrl\hyphauto
 
 {\pard \ql \f0 \sa180 \li0 \fi0 \outlinelevel0 \b \fs36 McSound scripts for Reaper Repository\par}
+{\pard \ql \f0 \sa180 \li0 \fi0 My contacts:\par}
+{\pard \ql \f0 \sa0 \li360 \fi-360 \bullet \tx360\tab {\field{\*\fldinst{HYPERLINK "https://t.me/VadimKruglo"}}{\fldrslt{\ul
+Telegram
+}}}
+\sa180\par}
 {\pard \ql \f0 \sa180 \li0 \fi0 A template for GitHub-hosted ReaPack repositories with automated {\field{\*\fldinst{HYPERLINK "https://github.com/cfillion/reapack-index"}}{\fldrslt{\ul
 reapack-index
 }}}
