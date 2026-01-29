@@ -1,5 +1,12 @@
 # McSound scripts for Reaper Repository
 
+MPL contacts:
+- [Telegram](https://t.me/VadimKruglo)
+- [Cockos Forum](https://forum.cockos.com/showthread.php?t=188335)
+
+
+
+
 A template for GitHub-hosted ReaPack repositories with automated
 [reapack-index](https://github.com/cfillion/reapack-index)
 running from GitHub Actions.
