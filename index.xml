@@ -1,5 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="McSound_Scripts" commit="201e8b16a86c30f95ea94764e48d18d12a2be4a6">
+<index version="1" name="McSound_Scripts" commit="ca1a8b93f6fca4c50c3745e30babd8c7565bf61b">
+  <category name="EnvoyLope">
+    <reapack name="McS - EnvoyLope - Copy Envelopes under Razors to the Track under mouse cursor.lua" type="script" desc="All in name.">
+      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Copy%20Envelopes%20under%20Razors%20to%20the%20Track%20under%20mouse%20cursor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - EnvoyLope - Delete Points in Razor.lua" type="script" desc="All in name.">
+      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Delete%20Points%20in%20Razor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - EnvoyLope - Keyb_Fine_Down.lua" type="script" desc="All in name.">
+      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Keyb_Fine_Down.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - EnvoyLope - Keyb_Fine_Up.lua" type="script" desc="All in name.">
+      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Keyb_Fine_Up.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - EnvoyLope - Keyb_Rough_Down.lua" type="script" desc="All in name.">
+      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Keyb_Rough_Down.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - EnvoyLope - Keyb_Rough_Up.lua" type="script" desc="All in name.">
+      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Keyb_Rough_Up.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - EnvoyLope - Keyb_Tiny_Down.lua" type="script" desc="All in name.">
+      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Keyb_Tiny_Down.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - EnvoyLope - Keyb_Tiny_Up.lua" type="script" desc="All in name.">
+      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Keyb_Tiny_Up.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - EnvoyLope - Main GUI.lua" type="script" desc="Main Envoylope script you shoud run.">
+      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Main%20GUI.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - EnvoyLope - Mouse_Wheel_Fine.lua" type="script" desc="All in name.">
+      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Mouse_Wheel_Fine.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - EnvoyLope - Mouse_Wheel_Rough.lua" type="script" desc="All in name.">
+      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Mouse_Wheel_Rough.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - EnvoyLope - Mouse_Wheel_Tiny.lua" type="script" desc="All in name.">
+      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Mouse_Wheel_Tiny.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - EnvoyLope - Razor on Two Points - Add Selection.lua" type="script" desc="All in name.">
+      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Razor%20on%20Two%20Points%20-%20Add%20Selection.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - EnvoyLope - Razor on Two Points - Select Between .lua" type="script" desc="All in name.">
+      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Razor%20on%20Two%20Points%20-%20Select%20Between%20.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - EnvoyLope - Razor on Two Points.lua" type="script" desc="All in name.">
+      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Razor%20on%20Two%20Points.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - EnvoyLope - Select Envelope under mouse cursor.lua" type="script" desc="All in name.">
+      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Select%20Envelope%20under%20mouse%20cursor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - EnvoyLope - Service Execution.lua" type="script" desc="All in name.">
+      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Service%20Execution.lua</source>
+      </version>
+    </reapack>
+  </category>
   <category name="FFMPEG Utils">
     <reapack name="McS - FFMPEG - Convert Video to DNxHD36.lua" type="script" desc="Converts Video to DNxHD mov file for smooth editing purposes.">
       <version name="1.0" author="McSound" time="2026-02-08T10:30:07Z">
@@ -20,6 +107,11 @@
     <reapack name="McS - FFMPEG - Implode Mono WAVs to Multichannel WAV.lua" type="script" desc="Imploding mono files to stereo or 5.1 6 channel wav .">
       <version name="1.0" author="McSound" time="2026-02-08T10:30:45Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/16ac2edaa035e83657078c3b6b477bc7f378ed41/FFMPEG%20Utils/McS%20-%20FFMPEG%20-%20Implode%20Mono%20WAVs%20to%20Multichannel%20WAV.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - FFMPEG - Replace Audio in Video.lua" type="script" desc="Script replaces all audiotracks in video file with one you defined without recalculation of video.">
+      <version name="1.0" author="McSound" time="2026-02-08T11:43:57Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/eeb6c2846dee360a49abab56abc20cda857d6447/FFMPEG%20Utils/McS%20-%20FFMPEG%20-%20Replace%20Audio%20in%20Video.lua</source>
       </version>
     </reapack>
   </category>
