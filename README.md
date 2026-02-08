@@ -3,7 +3,8 @@
 My contacts:
 - [Telegram](https://t.me/VadimKruglo)
 
-
+Repository link:
+https://github.com/McSound/Reaper-scripts/raw/master/index.xml
 
 A template for GitHub-hosted ReaPack repositories with automated
 [reapack-index](https://github.com/cfillion/reapack-index)
