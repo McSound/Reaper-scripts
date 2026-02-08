@@ -1,4 +1,4 @@
-# Vadim Kruglov - McSound lua scripts for Reaper repository
+Vadim Kruglov - McSound lua scripts for Reaper repository
 
 My contacts:
 - [Telegram](https://t.me/VadimKruglo)
