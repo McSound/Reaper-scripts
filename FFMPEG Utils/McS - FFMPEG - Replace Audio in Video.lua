@@ -1,5 +1,4 @@
- --@ description: Script deletes all audiotracks in videofile and places specified audio to videofile
- --@              without recalculation video.
+ --@ description: Script replaces all audiotracks in video file with one you defined without recalculation of video.
  --@ author: McSound
  --@ version:1.0
  --@ instructions: Select Video file or specify in browser. Then specify Audio - wav file. 
@@ -9,7 +8,7 @@
  --@ repository: https://github.com/McSound/Reaper-scripts/raw/master/index.xml
  --@ licence: GPL v3
  --@ forum thread:
- --@ Reaper v 7.53
+ --@ Reaper v 7.61
  
 --[[
  * Changelog:

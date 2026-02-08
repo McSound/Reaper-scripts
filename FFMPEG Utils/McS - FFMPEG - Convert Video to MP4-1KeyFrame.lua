@@ -5,7 +5,7 @@
  --@ repository: https://github.com/McSound/Reaper-scripts/raw/master/index.xml
  --@ licence: GPL v3
  --@ forum thread:
- --@ Reaper v 7.53
+ --@ Reaper v 7.61
  
 --[[
  * Changelog:
