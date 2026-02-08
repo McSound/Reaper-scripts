@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="McSound - Reaper Scripts Repository" commit="201e8b16a86c30f95ea94764e48d18d12a2be4a6">
+<index version="1" name="McSound_Scripts" commit="201e8b16a86c30f95ea94764e48d18d12a2be4a6">
   <category name="FFMPEG Utils">
     <reapack name="McS - FFMPEG - Convert Video to DNxHD36.lua" type="script" desc="Converts Video to DNxHD mov file for smooth editing purposes.">
       <version name="1.0" author="McSound" time="2026-02-08T10:30:07Z">
