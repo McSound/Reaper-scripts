@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="McSound - Reaper Scripts Repository" commit="2845f03843bfab292161dde8b410a95430062743">
+<index version="1" name="McSound - Reaper Scripts Repository" commit="16ac2edaa035e83657078c3b6b477bc7f378ed41">
   <category name="Example">
     <reapack name="cfillion_Hello world.lua" type="script" desc="Hello world">
       <metadata>
@@ -22,14 +22,25 @@ Markdown
     </reapack>
   </category>
   <category name="FFMPEG Utils">
-    <reapack name="McS - FFMPEG - Convert Video to DNxHD36.lua" type="script">
-      <version name="1.0" author="McSound" time="2025-11-13T11:45:55Z">
-        <source main="main">https://github.com/McSound/Reaper-scripts/raw/2845f03843bfab292161dde8b410a95430062743/FFMPEG%20Utils/McS%20-%20FFMPEG%20-%20Convert%20Video%20to%20DNxHD36.lua</source>
+    <reapack name="McS - FFMPEG - Convert Video to DNxHD36.lua" type="script" desc="Converts Video to DNxHD mov file for smooth editing purposes.">
+      <version name="1.0" author="McSound" time="2026-02-08T10:30:07Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/aaf11a8534dc6c742a03136d8c58d7c8f6bb8d4f/FFMPEG%20Utils/McS%20-%20FFMPEG%20-%20Convert%20Video%20to%20DNxHD36.lua</source>
       </version>
     </reapack>
-    <reapack name="McS - FFMPEG - Implode Mono WAVs to Multichannel WAV.lua" type="script">
-      <version name="1.0" author="McSound" time="2025-11-13T11:45:55Z">
-        <source main="main">https://github.com/McSound/Reaper-scripts/raw/2845f03843bfab292161dde8b410a95430062743/FFMPEG%20Utils/McS%20-%20FFMPEG%20-%20Implode%20Mono%20WAVs%20to%20Multichannel%20WAV.lua</source>
+    <reapack name="McS - FFMPEG - Convert Video to MP4-1KeyFrame.lua" type="script" desc="Converts Video to MP4 with 1 key frame for archiving or smooth editing purposes.">
+      <version name="1.0" author="McSound" time="2026-02-08T10:30:07Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/aaf11a8534dc6c742a03136d8c58d7c8f6bb8d4f/FFMPEG%20Utils/McS%20-%20FFMPEG%20-%20Convert%20Video%20to%20MP4-1KeyFrame.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - FFMPEG - Extract audio from video.lua" type="script" desc="Extracts audio from videofile and places audio item to Guide track.">
+      <version name="1.0" author="McSound" time="2026-02-08T10:30:07Z">
+        <changelog><![CDATA[+ Initial Release]]></changelog>
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/aaf11a8534dc6c742a03136d8c58d7c8f6bb8d4f/FFMPEG%20Utils/McS%20-%20FFMPEG%20-%20Extract%20audio%20from%20video.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - FFMPEG - Implode Mono WAVs to Multichannel WAV.lua" type="script" desc="Imploding mono files to stereo or 5.1 6 channel wav .">
+      <version name="1.0" author="McSound" time="2026-02-08T10:30:45Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/16ac2edaa035e83657078c3b6b477bc7f378ed41/FFMPEG%20Utils/McS%20-%20FFMPEG%20-%20Implode%20Mono%20WAVs%20to%20Multichannel%20WAV.lua</source>
       </version>
     </reapack>
   </category>
