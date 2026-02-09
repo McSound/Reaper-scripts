@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="McSound_Scripts" commit="ca1a8b93f6fca4c50c3745e30babd8c7565bf61b">
+<index version="1" name="McSound_Scripts" commit="bcf490295b60d04653446b4c6625ac4c31221e95">
   <category name="EnvoyLope">
     <reapack name="McS - EnvoyLope - Copy Envelopes under Razors to the Track under mouse cursor.lua" type="script" desc="All in name.">
       <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
@@ -112,6 +112,13 @@
     <reapack name="McS - FFMPEG - Replace Audio in Video.lua" type="script" desc="Script replaces all audiotracks in video file with one you defined without recalculation of video.">
       <version name="1.0" author="McSound" time="2026-02-08T11:43:57Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/eeb6c2846dee360a49abab56abc20cda857d6447/FFMPEG%20Utils/McS%20-%20FFMPEG%20-%20Replace%20Audio%20in%20Video.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <category name="Monitor Toolbar/JSFX">
+    <reapack name="McS_6ch_and_51_Volume.jsfx" type="effect" desc="6 channel and 5.1 Volume Fader">
+      <version name="1.0" author="McSound" time="2026-02-09T10:08:08Z">
+        <source>https://github.com/McSound/Reaper-scripts/raw/bcf490295b60d04653446b4c6625ac4c31221e95/Monitor%20Toolbar/JSFX/McS_6ch_and_51_Volume.jsfx</source>
       </version>
     </reapack>
   </category>
