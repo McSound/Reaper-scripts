@@ -1,0 +1,15 @@
+desc: McS_MonitorFX_SOLO_51
+
+slider1:1<0,1,1{off,on}>enable channel 1
+slider2:1<0,1,1{off,on}>enable channel 2
+slider3:1<0,1,1{off,on}>enable channel 3
+slider4:1<0,1,1{off,on}>enable channel 4
+slider5:1<0,1,1{off,on}>enable channel 5
+slider6:1<0,1,1{off,on}>enable channel 6
+
+@sample
+x=0;
+loop(6,
+  spl(x)*= slider(x+1);
+  x+=1;
+);
