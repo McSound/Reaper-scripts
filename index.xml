@@ -94,7 +94,7 @@
       </version>
       <metadata>
         @provides
-          FFMPEG Utils/FFMPEG/place_ffmpeg_files_here
+          place_ffmpeg_files_here
       </metadata>
     </reapack>
     <reapack name="McS - FFMPEG - Convert Video to MP4-1KeyFrame.lua" type="script" desc="Converts Video to MP4 with 1 key frame for archiving or smooth editing purposes.">
