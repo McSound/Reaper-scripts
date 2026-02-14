@@ -1,4 +1,7 @@
 desc: McS_MonitorFX_SOLO_51
+//desc: monitor FX solo 5.1 
+//Version: 1.0
+//Author: McSound
 
 slider1:1<0,1,1{off,on}>enable channel 1
 slider2:1<0,1,1{off,on}>enable channel 2
