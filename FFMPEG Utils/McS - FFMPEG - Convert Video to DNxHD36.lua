@@ -6,6 +6,8 @@
  --@ licence: GPL v3
  --@ forum thread:
  --@ Reaper v 7.61
+ --@ provides
+ --   place_ffmpeg_files_here.readme
  
 --[[
  * Changelog:
