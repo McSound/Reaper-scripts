@@ -1,6 +1,7 @@
  --@ description: All in name.
  --@ author: McSound
  --@ version:1.08
+ --@ provides [nomain] .
  --@ instructions: Select Video file(s) and run script. 
  --@ repository: https://github.com/McSound/Reaper-scripts/raw/master/index.xml
  --@ licence: GPL v3
