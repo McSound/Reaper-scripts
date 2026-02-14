@@ -1,5 +1,6 @@
 If you want scripts to use the latest ffmpeg version, place its compiled files here in FFMPEG subfolder,
-(like that - 
+like that - 
+
 ffmpeg.exe
 ffplay.exe
 ffprobe.exe
@@ -9,6 +10,6 @@ avfilter-11.dll
 avformat-62.dll
 avutil-60.dll
 swresample-6.dll
-swscale-9.dll) 
+swscale-9.dll
  
 So script would use them instead of ones in \UserPlugins folder.
