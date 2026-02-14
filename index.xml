@@ -124,7 +124,7 @@
   </category>
   <metadata>
     @provides
-      FFMPEG Utils/FFMPEG/place_ffmpeg_files_here.txt
+      FFMPEG Utils/FFMPEG/place_ffmpeg_files_here
     <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
 {\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
 \widowctrl\hyphauto
