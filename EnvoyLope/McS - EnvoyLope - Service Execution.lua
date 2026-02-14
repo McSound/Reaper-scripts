@@ -7,7 +7,7 @@
  --@ licence: GPL v3
  --@ forum thread:
  --@ Reaper v 7.61
- 
+ -- suka
 --[[
  * Changelog:
  * v1.0 (2025-11-14)
@@ -798,4 +798,5 @@ end
 
 Main()
 r.UpdateArrange()
+
 
