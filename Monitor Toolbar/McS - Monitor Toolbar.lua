@@ -1,3 +1,16 @@
+ --@ description: Monitor FX and Item's params Toolbar
+ --@ about: The script was made with great help of vitalker, X-Raym, mpl and other scripters
+ --@ author: McSound
+ --@ version: 1.0
+ --@ repository: https://github.com/McSound/Reaper-scripts/raw/master/index.xml
+ --@ licence: GPL v3
+ 
+--[[
+ * Changelog:
+ * v1.0 (2025-11-14)
+  + Initial Release
+--]]
+
 --- The script was made with great help of vitalker, X-Raym, mpl and other scripters.
 --- There's some pieces of code from these authors scripts here.
 
@@ -4823,7 +4836,7 @@ function framework()
     -- ImGui.OpenPopupOnItemClick(ctx, "basic_menu", nil)
   end
 
-  local open_select_menu = false
+  -- local open_select_menu = false
 
   ImGui.SetNextWindowPos(ctx,  mouse_x, mouse_y, ImGui.Cond_Appearing, 0.0, 0.0)
   -- if ImGui.BeginPopupModal(ctx, "basic_menu", nil, ImGui.WindowFlags_AlwaysAutoResize) then
@@ -4854,7 +4867,7 @@ function framework()
     if ImGui.BeginCombo(ctx, "##select_combo", "Select items with non-default .. ", ImGui.ComboFlags_HeightLargest) then
       for i=1,#combo.select do
         if ImGui.Selectable(ctx, combo.select[i].txt, 0) then
-          combo.select[i].command()
+          combo.select[i].command() --count_selected_items_with_params(val)
           -- ImGui.SetItemDefaultFocus(ctx)
         end
       end
@@ -4938,44 +4951,44 @@ function framework()
     menu_open.basic = false
   end
 
-  if open_select_menu then
-    ImGui.OpenPopup(ctx, "select_menu", ImGui.HoveredFlags_AllowWhenBlockedByPopup)
-  end
+  -- if open_select_menu then
+    -- ImGui.OpenPopup(ctx, "select_menu", ImGui.HoveredFlags_AllowWhenBlockedByPopup)
+  -- end
 
-  if ImGui.BeginPopup(ctx, "select_menu", nil) then
-    menu_open.select = true
-    local col_txt = colors.grey9
-    local col_but = colors.buttonColor_blue
-    local col_hov = colors.blue5
-    local col_act = colors.blue5
-
-    ImGui.PushStyleVar(ctx, ImGui.StyleVar_SelectableTextAlign, 0, 0)
-    ImGui.PushStyleColor(ctx, ImGui.Col_Text, col_txt)
-    ImGui.PushStyleColor(ctx, ImGui.Col_Header, colors.buttonColor_blue)
-    ImGui.PushStyleColor(ctx, ImGui.Col_HeaderHovered, colors.hoveredColor_blue)
-    ImGui.PushStyleColor(ctx, ImGui.Col_HeaderActive, colors.activeColor_blue)
-
-    if ImGui.Selectable(ctx, "Select items with non-default Loop,Mute,Reverse,CM,Playrate + FX") then count_selected_items_with_params("ripfx",true) end
-    if ImGui.Selectable(ctx, "Select items with non-default Loop,Mute,Reverse,CM,Playrate") then count_selected_items_with_params("rip",true) end
-    if ImGui.Selectable(ctx, "Select items with non-default Any of All Params") then count_selected_items_with_params("all",true) end
-    if ImGui.Selectable(ctx, "Select items with non-default Loop") then count_selected_items_with_params("loop",true) end
-    if ImGui.Selectable(ctx, "Select items with non-default Mute") then count_selected_items_with_params("mute",true) end
-    if ImGui.Selectable(ctx, "Select items with non-default Lock") then count_selected_items_with_params("lock",true) end
-    if ImGui.Selectable(ctx, "Select items with non-default Reverse") then count_selected_items_with_params("reverse",true) end
-    if ImGui.Selectable(ctx, "Select items with non-default Chan Mode") then count_selected_items_with_params("chan_mode",true) end
-    if ImGui.Selectable(ctx, "Select items with non-default Vol") then count_selected_items_with_params("vol",true) end
-    if ImGui.Selectable(ctx, "Select items with non-default Pan") then count_selected_items_with_params("pan",true) end
-    if ImGui.Selectable(ctx, "Select items with non-default Pitch") then count_selected_items_with_params("pitch",true) end
-    if ImGui.Selectable(ctx, "Select items with non-default Playrate") then count_selected_items_with_params("playrate",true) end
-    if ImGui.Selectable(ctx, "Select items with non-default Preserve Pitch") then count_selected_items_with_params("preserve_pitch",true) end
-
-    ImGui.PopStyleColor(ctx, 4)
-    ImGui.PopStyleVar(ctx, 1)
-
-    ImGui.EndPopup(ctx)
-  else
-    menu_open.select = false
-  end
+  -- if ImGui.BeginPopup(ctx, "select_menu", nil) then
+    -- menu_open.select = true
+    -- local col_txt = colors.grey9
+    -- local col_but = colors.buttonColor_blue
+    -- local col_hov = colors.blue5
+    -- local col_act = colors.blue5
+-- 
+    -- ImGui.PushStyleVar(ctx, ImGui.StyleVar_SelectableTextAlign, 0, 0)
+    -- ImGui.PushStyleColor(ctx, ImGui.Col_Text, col_txt)
+    -- ImGui.PushStyleColor(ctx, ImGui.Col_Header, colors.buttonColor_blue)
+    -- ImGui.PushStyleColor(ctx, ImGui.Col_HeaderHovered, colors.hoveredColor_blue)
+    -- ImGui.PushStyleColor(ctx, ImGui.Col_HeaderActive, colors.activeColor_blue)
+-- 
+    -- if ImGui.Selectable(ctx, "Select items with non-default Loop,Mute,Reverse,CM,Playrate + FX") then count_selected_items_with_params("ripfx",true) end
+    -- if ImGui.Selectable(ctx, "Select items with non-default Loop,Mute,Reverse,CM,Playrate") then count_selected_items_with_params("rip",true) end
+    -- if ImGui.Selectable(ctx, "Select items with non-default Any of All Params") then count_selected_items_with_params("all",true) end
+    -- if ImGui.Selectable(ctx, "Select items with non-default Loop") then count_selected_items_with_params("loop",true) end
+    -- if ImGui.Selectable(ctx, "Select items with non-default Mute") then count_selected_items_with_params("mute",true) end
+    -- if ImGui.Selectable(ctx, "Select items with non-default Lock") then count_selected_items_with_params("lock",true) end
+    -- if ImGui.Selectable(ctx, "Select items with non-default Reverse") then count_selected_items_with_params("reverse",true) end
+    -- if ImGui.Selectable(ctx, "Select items with non-default Chan Mode") then count_selected_items_with_params("chan_mode",true) end
+    -- if ImGui.Selectable(ctx, "Select items with non-default Vol") then count_selected_items_with_params("vol",true) end
+    -- if ImGui.Selectable(ctx, "Select items with non-default Pan") then count_selected_items_with_params("pan",true) end
+    -- if ImGui.Selectable(ctx, "Select items with non-default Pitch") then count_selected_items_with_params("pitch",true) end
+    -- if ImGui.Selectable(ctx, "Select items with non-default Playrate") then count_selected_items_with_params("playrate",true) end
+    -- if ImGui.Selectable(ctx, "Select items with non-default Preserve Pitch") then count_selected_items_with_params("preserve_pitch",true) end
+-- 
+    -- ImGui.PopStyleColor(ctx, 4)
+    -- ImGui.PopStyleVar(ctx, 1)
+-- 
+    -- ImGui.EndPopup(ctx)
+  -- else
+    -- menu_open.select = false
+  -- end
 
 
   ImGui.PushID(ctx, 1)
