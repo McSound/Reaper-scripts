@@ -7,8 +7,6 @@
  --@               You can select multiple video files and specify audio for each of them to perform batch conversion.
  --@ repository: https://github.com/McSound/Reaper-scripts/raw/master/index.xml
  --@ licence: GPL v3
- --@ forum thread:
- --@ Reaper v 7.61
  
 --[[
  * Changelog:

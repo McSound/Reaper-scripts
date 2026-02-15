@@ -1,11 +1,9 @@
  --@ description: Extracts audio from videofile and places audio item to Guide track.
  --@ author: McSound
- --@ version:1.0
+ --@ version: 1.0
  --@ instructions: Select Video file(s) and run script.
  --@ repository: https://github.com/McSound/Reaper-scripts/raw/master/index.xml
  --@ licence: GPL v3
- --@ forum thread:
- --@ Reaper v 7.53
  
 --[[
  * Changelog:
