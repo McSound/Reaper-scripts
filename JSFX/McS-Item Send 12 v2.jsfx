@@ -1,0 +1,77 @@
+desc: McS-Item Send 12 v2
+EffectName:McS-Item Send 12 v2
+VendorString:McSound
+VendorVersion:2.0
+options:gmem = mcs_item_sends
+
+slider1:-156.0<-156.0, 12.0, 0.1>Send 1
+slider2:-156.0<-156.0, 12.0, 0.1>Send 2
+slider3:-156.0<-156.0, 12.0, 0.1>Send 3
+slider4:-156.0<-156.0, 12.0, 0.1>Send 4
+slider5:-156.0<-156.0, 12.0, 0.1>Send 5
+slider6:-156.0<-156.0, 12.0, 0.1>Send 6
+slider7:-156.0<-156.0, 12.0, 0.1>Send 7
+slider8:-156.0<-156.0, 12.0, 0.1>Send 8
+slider9:-156.0<-156.0, 12.0, 0.1>Send 9
+slider10:-156.0<-156.0, 12.0, 0.1>Send 10
+slider11:-156.0<-156.0, 12.0, 0.1>Send 11
+slider12:-156.0<-156.0, 12.0, 0.1>Send 12
+slider13:1<0,1,1{off,on}>enable item send 1
+slider14:1<0,1,1{off,on}>enable item send 2
+slider15:1<0,1,1{off,on}>enable item send 3
+slider16:1<0,1,1{off,on}>enable item send 4
+slider17:1<0,1,1{off,on}>enable item send 5
+slider18:1<0,1,1{off,on}>enable item send 6
+slider19:1<0,1,1{off,on}>enable item send 7
+slider20:1<0,1,1{off,on}>enable item send 8
+slider21:1<0,1,1{off,on}>enable item send 9
+slider22:1<0,1,1{off,on}>enable item send 10
+slider23:1<0,1,1{off,on}>enable item send 11
+slider24:1<0,1,1{off,on}>enable item send 12
+
+@slider
+vol1 = 10 ^ (slider1 / 20);
+vol2 = 10 ^ (slider2 / 20);
+vol3 = 10 ^ (slider3 / 20);
+vol4 = 10 ^ (slider4 / 20);
+vol5 = 10 ^ (slider5 / 20);
+vol6 = 10 ^ (slider6 / 20);
+vol7 = 10 ^ (slider7 / 20);
+vol8 = 10 ^ (slider8 / 20);
+vol9 = 10 ^ (slider9 / 20);
+vol10 = 10 ^ (slider10 / 20);
+vol11 = 10 ^ (slider11 / 20);
+vol12 = 10 ^ (slider12 / 20);
+
+@sample
+
+tmp1 = spl0;
+tmp2 = spl1;
+
+spl6 = tmp1 * vol1 * slider13;
+spl7 = tmp2 * vol1 * slider13;
+spl8 = tmp1 * vol2 * slider14;
+spl9 = tmp2 * vol2 * slider14;
+spl10 = tmp1 * vol3 * slider15;
+spl11 = tmp2 * vol3 * slider15;
+spl12 = tmp1 * vol4 * slider16;
+spl13 = tmp2 * vol4 * slider16;
+spl14 = tmp1 * vol5 * slider17;
+spl15 = tmp2 * vol5 * slider17;
+spl16 = tmp1 * vol6 * slider18;
+spl17 = tmp2 * vol6 * slider18;
+spl18 = tmp1 * vol7 * slider19;
+spl19 = tmp2 * vol7 * slider19;
+spl20 = tmp1 * vol8 * slider20;
+spl21 = tmp2 * vol8 * slider20;
+spl22 = tmp1 * vol9 * slider21;
+spl23 = tmp2 * vol9 * slider21;
+spl24 = tmp1 * vol10 * slider22;
+spl25 = tmp2 * vol10 * slider22;
+spl26 = tmp1 * vol11 * slider23;
+spl27 = tmp2 * vol11 * slider23;
+spl28 = tmp1 * vol12 * slider24;
+spl29 = tmp2 * vol12 * slider24;
+
+//@gfx
+//set_host_numchan(30)

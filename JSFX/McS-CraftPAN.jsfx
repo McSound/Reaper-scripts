@@ -1,0 +1,14 @@
+desc: McS - Craft PAN
+EffectName:McS- Craft PAN
+VendorString:McSound
+VendorVersion:1.0
+options:gmem = mcs_item_sends
+
+slider1:50<0, 100, 1>X
+slider2:100<100, 0, 1>Y
+
+@slider
+slider1;
+slider2;
+
+//@gfx

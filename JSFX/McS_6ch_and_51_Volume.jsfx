@@ -1,0 +1,30 @@
+desc: McS_6ch_and_51_Volume
+//desc: 6 channel and 5.1 Volume Fader 
+//Version: 1.0
+//Author: McSound
+
+slider1:dB1=0.0<-144.0, 18.0, 0.1>1 ch Volume (dB)
+slider2:dB2=0.0<-144.0, 18.0, 0.1>2 ch Volume (dB)
+slider3:dB3=0.0<-144.0, 18.0, 0.1>3 ch Volume (dB)
+slider4:dB4=0.0<-144.0, 18.0, 0.1>4 ch Volume (dB)
+slider5:dB5=0.0<-144.0, 18.0, 0.1>5 ch Volume (dB)
+slider6:dB6=0.0<-144.0, 18.0, 0.1>6 ch Volume (dB)
+
+slider7:dB7=0.0<-144.0, 18.0, 0.1>5.1 Monitor Volume (dB)
+
+@slider
+vol1 = 10 ^ ((dB1+dB7) / 20);
+vol2 = 10 ^ ((dB2+dB7) / 20);
+vol3 = 10 ^ ((dB3+dB7) / 20);
+vol4 = 10 ^ ((dB4+dB7) / 20);
+vol5 = 10 ^ ((dB5+dB7) / 20);
+vol6 = 10 ^ ((dB6+dB7) / 20);
+vol7 = 10 ^ ((dB7+dB7) / 20);
+
+@sample
+spl0 *= vol1;
+spl1 *= vol2;
+spl2 *= vol3;
+spl3 *= vol4;
+spl4 *= vol5;
+spl5 *= vol6;
