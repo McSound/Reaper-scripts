@@ -1,18 +1,11 @@
- --@ description: Converts Video to DNxHD mov file for smooth editing purposes.
+ --@ description: Converts Video to 1
  --@ author: McSound
- --@ version: 1.1
+ --@ provides KnobEd.png
+ --   place_ffmpeg_files_here.readme
+ --@ version: 1.2
  --@ instructions: Select Video file(s) and run script. 
  --@ repository: https://github.com/McSound/Reaper-scripts/raw/master/index.xml
  --@ licence: GPL v3
- --@ provides KnobEd.png
- --   place_ffmpeg_files_here.readme
-
- 
---[[
- * Changelog:
- * v1.0 (2025-11-14)
-  + Initial Release
---]]
 
 local r = reaper
 local modf = math.modf
