@@ -1,7 +1,7 @@
 desc: McS-Item Send 12 v2
-EffectName:McS-Item Send 12 v2
-VendorString:McSound
-VendorVersion:2.0
+//Version: 1.0
+//Author: McSound
+
 options:gmem = mcs_item_sends
 
 slider1:-156.0<-156.0, 12.0, 0.1>Send 1
