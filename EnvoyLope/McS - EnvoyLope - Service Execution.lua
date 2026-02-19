@@ -1,6 +1,6 @@
  --@ description: All in name.
  --@ author: McSound
- --@ version:1.08
+ --@ version:1.09
  --@ provides [nomain] .
  --@ instructions: Select Video file(s) and run script. 
  --@ repository: https://github.com/McSound/Reaper-scripts/raw/master/index.xml
@@ -798,5 +798,6 @@ end
 
 Main()
 r.UpdateArrange()
+
 
 
