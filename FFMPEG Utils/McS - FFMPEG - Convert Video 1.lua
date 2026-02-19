@@ -4,8 +4,7 @@
  --@ instructions: Select Video file(s) and run script. 
  --@ repository: https://github.com/McSound/Reaper-scripts/raw/master/index.xml
  --@ licence: GPL v3
- --@ provides
- --   KnobEd.png
+ --@ provides KnobEd.png
  --   place_ffmpeg_files_here.readme
 
  
