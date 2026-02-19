@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="McSound_Scripts" commit="27d4a03f2b4c6b7d462e51e57fda1da4b1cd21ad">
+<index version="1" name="McSound_Scripts" commit="728d95551153822025fd7be9420a7911bb9d2005">
   <category name="EnvoyLope">
     <reapack name="McS - EnvoyLope - Copy Envelopes under Razors to the Track under mouse cursor.lua" type="script" desc="All in name.">
       <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
@@ -88,12 +88,15 @@
     </reapack>
   </category>
   <category name="FFMPEG Utils">
-    <reapack name="McS - FFMPEG - Convert Video 1.lua" type="script" desc="Converts Video to DNxHD mov file for smooth editing purposes.">
+    <reapack name="McS - FFMPEG - Convert Video 1.lua" type="script" desc="Converts Video to 1">
       <version name="1.0" author="McSound" time="2026-02-19T11:14:14Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/dca8d4f97d1f04eac9f6877d0df15265fb977bb7/FFMPEG%20Utils/McS%20-%20FFMPEG%20-%20Convert%20Video%201.lua</source>
       </version>
       <version name="1.1" author="McSound" time="2026-02-19T11:25:44Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/27d4a03f2b4c6b7d462e51e57fda1da4b1cd21ad/FFMPEG%20Utils/McS%20-%20FFMPEG%20-%20Convert%20Video%201.lua</source>
+      </version>
+      <version name="1.2" author="McSound" time="2026-02-19T11:36:31Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/728d95551153822025fd7be9420a7911bb9d2005/FFMPEG%20Utils/McS%20-%20FFMPEG%20-%20Convert%20Video%201.lua</source>
       </version>
     </reapack>
     <reapack name="McS - FFMPEG - Convert Video to DNxHD36.lua" type="script" desc="Converts Video to DNxHD mov file for smooth editing purposes.">
