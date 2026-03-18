@@ -1,11 +1,12 @@
- --@ description: Converts Video to 1
- --@ author: McSound
- --@ provides KnobEd.png
- --  [txt] place_ffmpeg_files_here.readme
- --@ version: 1.3
- --@ instructions: Select Video file(s) and run script. 
- --@ repository: https://github.com/McSound/Reaper-scripts/raw/master/index.xml
- --@ licence: GPL v3
+--@ description: Converts Video to 1
+--@ author: McSound
+--@ provides 
+--  KnobEd.png
+--  [txt] place_ffmpeg_files_here.readme
+--@ version: 1.4
+--@ instructions: Select Video file(s) and run script. 
+--@ repository: https://github.com/McSound/Reaper-scripts/raw/master/index.xml
+--@ licence: GPL v3
 
 local r = reaper
 local modf = math.modf
