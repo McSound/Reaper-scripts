@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="McSound_Scripts" commit="7bf349b362113783621e18ef06e51e61bf771650">
+<index version="1" name="McSound_Scripts" commit="5dee4053554d84de35d91c7a2d70a75613521fbe">
   <category name="EnvoyLope">
     <reapack name="McS - EnvoyLope - Copy Envelopes under Razors to the Track under mouse cursor.lua" type="script" desc="Copy Envelopes under Razors to the Track under mouse cursor">
       <version name="1.08" author="McSound" time="2026-03-18T21:28:18Z">
@@ -137,15 +137,6 @@
   </category>
   <category name="Monitor Toolbar">
     <reapack name="McS - Monitor Toolbar.lua" type="script" desc="Monitor FX and Item's params Toolbar">
-      <metadata>
-        <description><![CDATA[{\rtf1\ansi\deff0{\fonttbl{\f0 \fswiss Helvetica;}{\f1 \fmodern Courier;}}
-{\colortbl;\red255\green0\blue0;\red0\green0\blue255;}
-\widowctrl\hyphauto
-
-{\pard \ql \f0 \sa180 \li0 \fi0 The script was made with great help of vitalker, X-Raym, mpl and other scripters\par}
-}
-]]></description>
-      </metadata>
       <version name="1.0" author="McSound" time="2026-02-15T12:33:12Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/7aa2b39fbc11696d49b22947f7f15e0c34a8f77e/Monitor%20Toolbar/McS%20-%20Monitor%20Toolbar.lua</source>
       </version>
