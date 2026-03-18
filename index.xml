@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="McSound_Scripts" commit="84f2bd2b9c8999be34c151c1d2de9e0fab514af8">
+<index version="1" name="McSound Scripts" commit="84f2bd2b9c8999be34c151c1d2de9e0fab514af8">
   <category name="EnvoyLope">
     <reapack name="McS - EnvoyLope - Copy Envelopes under Razors to the Track under mouse cursor.lua" type="script" desc="Copy Envelopes under Razors to the Track under mouse cursor">
       <version name="1.08" author="McSound" time="2026-03-18T21:28:18Z">
