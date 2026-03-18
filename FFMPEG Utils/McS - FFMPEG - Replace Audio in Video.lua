@@ -1,18 +1,13 @@
- --@ description: Script replaces all audiotracks in video file with one you defined without recalculation of video.
- --@ author: McSound
- --@ version:1.0
- --@ instructions: Select Video file or specify in browser. Then specify Audio - wav file. 
- --@               If your video codec is H264 then you should choose 1.
- --@               If your video codec is DHxHD or ProRes then choose 2.
- --@               You can select multiple video files and specify audio for each of them to perform batch conversion.
- --@ repository: https://github.com/McSound/Reaper-scripts/raw/master/index.xml
- --@ licence: GPL v3
- 
---[[
- * Changelog:
- * v1.0 (2025-11-14)
-  + Initial Release
---]]
+ --@description Script replaces all audiotracks in video file with one you defined without recalculation of video.
+ --@author McSound
+ --@version 1.0
+ --@instructions   Select Video file or specify in browser. Then specify Audio - wav file. 
+ --                If your video codec is H264 then you should choose 1 (for making ac3 audiotrack)
+ --                If your video codec is DHxHD or ProRes then choose 2 (for making pcm audiotrack)
+ --                You can select multiple video files and specify audio for each of them to perform batch conversion.
+ --@repository https://github.com/McSound/Reaper-scripts/raw/master/index.xml
+ --@licence GPL v3
+
 
 local AAC_bitrate = "320k"
 

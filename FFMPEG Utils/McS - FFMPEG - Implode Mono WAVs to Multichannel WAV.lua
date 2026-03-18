@@ -1,19 +1,12 @@
- --@ description: Imploding mono files to stereo or 5.1 6 channel wav . 
- --@ author: McSound
- --@ version:1.0
- --@ instructions: Specify IN and OUT folders. All found _L,_R files or
- --@               _L,_R,_C,_LFE,_LS,_RS will be converted to stereo or 6 ch files 
- --@               accordingly and placed to OUT folder, keeping the structure.
- --@ repository: https://github.com/McSound/Reaper-scripts/raw/master/index.xml
- --@ licence: GPL v3
- --@ forum thread:
- --@ Reaper v 7.61
+ -- @description Imploding mono files to stereo or 5.1 6 channel wav . 
+ -- @author McSound
+ -- @version 1.0
+ -- @instructions Specify IN and OUT folders. All found _L,_R files or
+ --               _L,_R,_C,_LFE,_LS,_RS will be converted to stereo or 6 ch files 
+ --               accordingly and placed to OUT folder, keeping the structure.
+ -- @repository https://github.com/McSound/Reaper-scripts/raw/master/index.xml
+ -- @licence GPL v3
  
---[[
- * Changelog:
- * v1.0 (2025-11-14)
-  + Initial Release
---]]
 
 local r = reaper
 local modf = math.modf
