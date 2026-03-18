@@ -1,24 +1,15 @@
- --@ description: Monitor FX and Item's params Toolbar
- --@ about: The script was made with great help of vitalker, X-Raym, mpl and other scripters
- --@ author: McSound
- --@ version: 1.0
- --@ repository: https://github.com/McSound/Reaper-scripts/raw/master/index.xml
- --@ licence: GPL v3
+ -- @description Monitor FX and Item's params Toolbar
+ -- @author McSound
+ -- @version 1.0
+ -- @repository https://github.com/McSound/Reaper-scripts/raw/master/index.xml
+ -- @licence GPL v3
  
---[[
- * Changelog:
- * v1.0 (2025-11-14)
-  + Initial Release
---]]
+ -- The script was made with great help of cfillion, vitalker, X-Raym, mpl and other scripters.
+ -- There's some pieces of code from these authors scripts here.
 
---- The script was made with great help of vitalker, X-Raym, mpl and other scripters.
---- There's some pieces of code from these authors scripts here.
-
---- User config
 
 local font_size = 14 -- 14 is default 
 
---- Monitor Toolbar
 local r = reaper
 local floor = math.floor
 local abs = math.abs
