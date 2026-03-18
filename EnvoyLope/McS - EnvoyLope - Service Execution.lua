@@ -1,6 +1,7 @@
  -- @description Service Execution Script
  -- @author McSound
  -- @version 1.08
+ -- @noindex
  -- @repository https://github.com/McSound/Reaper-scripts/raw/master/index.xml
  -- @licence GPL v3
  
