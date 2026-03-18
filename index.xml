@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="McSound_Scripts" commit="601fdba0c80e928f71fde0e7a6f620f68a475854">
+<index version="1" name="McSound_Scripts" commit="7bf349b362113783621e18ef06e51e61bf771650">
   <category name="EnvoyLope">
     <reapack name="McS - EnvoyLope - Copy Envelopes under Razors to the Track under mouse cursor.lua" type="script" desc="Copy Envelopes under Razors to the Track under mouse cursor">
       <version name="1.08" author="McSound" time="2026-03-18T21:28:18Z">
@@ -79,14 +79,6 @@
     <reapack name="McS - EnvoyLope - Select Envelope under mouse cursor.lua" type="script" desc="Select Envelope under mouse cursor">
       <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Select%20Envelope%20under%20mouse%20cursor.lua</source>
-      </version>
-    </reapack>
-    <reapack name="McS - EnvoyLope - Service Execution.lua" type="script" desc="Service Execution Script">
-      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
-        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Service%20Execution.lua</source>
-      </version>
-      <version name="1.09" author="McSound" time="2026-02-19T11:44:07Z">
-        <source main="main">https://github.com/McSound/Reaper-scripts/raw/182efbc5523b7948b500afedfb47b62caf47b9cb/EnvoyLope/McS%20-%20EnvoyLope%20-%20Service%20Execution.lua</source>
       </version>
     </reapack>
   </category>
