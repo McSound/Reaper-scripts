@@ -1,77 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="McSound_Scripts" commit="c8b3fa40bf3148640a462e61723937d26e2efcfe">
+<index version="1" name="McSound_Scripts" commit="601fdba0c80e928f71fde0e7a6f620f68a475854">
   <category name="EnvoyLope">
     <reapack name="McS - EnvoyLope - Copy Envelopes under Razors to the Track under mouse cursor.lua" type="script" desc="Copy Envelopes under Razors to the Track under mouse cursor">
       <version name="1.08" author="McSound" time="2026-03-18T21:28:18Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/c8b3fa40bf3148640a462e61723937d26e2efcfe/EnvoyLope/McS%20-%20EnvoyLope%20-%20Copy%20Envelopes%20under%20Razors%20to%20the%20Track%20under%20mouse%20cursor.lua</source>
       </version>
     </reapack>
-    <reapack name="McS - EnvoyLope - Keyb_Fine_Down.lua" type="script" desc="All in name.">
+    <reapack name="McS - EnvoyLope - Delete Points in Razor.lua" type="script" desc="Delete Points in Razor area">
+      <version name="1.08" author="McSound" time="2026-03-18T21:31:22Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/601fdba0c80e928f71fde0e7a6f620f68a475854/EnvoyLope/McS%20-%20EnvoyLope%20-%20Delete%20Points%20in%20Razor.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - EnvoyLope - GUI.lua" type="script" desc="Main EnvoyLope GUI script with settings">
+      <version name="1.08" author="McSound" time="2026-03-18T21:31:22Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/601fdba0c80e928f71fde0e7a6f620f68a475854/EnvoyLope/McS%20-%20EnvoyLope%20-%20GUI.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - EnvoyLope - Keyb_Fine_Down.lua" type="script" desc="Keyb_Fine_Down">
       <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Keyb_Fine_Down.lua</source>
       </version>
     </reapack>
-    <reapack name="McS - EnvoyLope - Keyb_Fine_Up.lua" type="script" desc="All in name.">
+    <reapack name="McS - EnvoyLope - Keyb_Fine_Up.lua" type="script" desc="Keyb_Fine_Up">
       <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Keyb_Fine_Up.lua</source>
       </version>
     </reapack>
-    <reapack name="McS - EnvoyLope - Keyb_Rough_Down.lua" type="script" desc="All in name.">
+    <reapack name="McS - EnvoyLope - Keyb_Rough_Down.lua" type="script" desc="Keyb_Rough_Down">
       <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Keyb_Rough_Down.lua</source>
       </version>
     </reapack>
-    <reapack name="McS - EnvoyLope - Keyb_Rough_Up.lua" type="script" desc="All in name.">
+    <reapack name="McS - EnvoyLope - Keyb_Rough_Up.lua" type="script" desc="Keyb_Rough_Up">
       <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Keyb_Rough_Up.lua</source>
       </version>
     </reapack>
-    <reapack name="McS - EnvoyLope - Keyb_Tiny_Down.lua" type="script" desc="All in name.">
+    <reapack name="McS - EnvoyLope - Keyb_Tiny_Down.lua" type="script" desc="Keyb_Tiny_Down">
       <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Keyb_Tiny_Down.lua</source>
       </version>
     </reapack>
-    <reapack name="McS - EnvoyLope - Keyb_Tiny_Up.lua" type="script" desc="All in name.">
+    <reapack name="McS - EnvoyLope - Keyb_Tiny_Up.lua" type="script" desc="Keyb_Tiny_Up">
       <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Keyb_Tiny_Up.lua</source>
       </version>
     </reapack>
-    <reapack name="McS - EnvoyLope - Mouse_Wheel_Fine.lua" type="script" desc="All in name.">
+    <reapack name="McS - EnvoyLope - Mouse_Wheel_Fine.lua" type="script" desc="Mouse_Wheel_Fine">
       <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Mouse_Wheel_Fine.lua</source>
       </version>
     </reapack>
-    <reapack name="McS - EnvoyLope - Mouse_Wheel_Rough.lua" type="script" desc="All in name.">
+    <reapack name="McS - EnvoyLope - Mouse_Wheel_Rough.lua" type="script" desc="Mouse_Wheel_Rough">
       <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Mouse_Wheel_Rough.lua</source>
       </version>
     </reapack>
-    <reapack name="McS - EnvoyLope - Mouse_Wheel_Tiny.lua" type="script" desc="All in name.">
+    <reapack name="McS - EnvoyLope - Mouse_Wheel_Tiny.lua" type="script" desc="Mouse_Wheel_Tiny">
       <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Mouse_Wheel_Tiny.lua</source>
       </version>
     </reapack>
-    <reapack name="McS - EnvoyLope - Razor on Two Points - Add Selection.lua" type="script" desc="All in name.">
+    <reapack name="McS - EnvoyLope - Razor on Two Points - Add Selection.lua" type="script" desc="Razor on Two Points - Add Selection">
       <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Razor%20on%20Two%20Points%20-%20Add%20Selection.lua</source>
       </version>
     </reapack>
-    <reapack name="McS - EnvoyLope - Razor on Two Points - Select Between .lua" type="script" desc="All in name.">
+    <reapack name="McS - EnvoyLope - Razor on Two Points - Select Between .lua" type="script" desc="Razor on Two Points - Select Between">
       <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Razor%20on%20Two%20Points%20-%20Select%20Between%20.lua</source>
       </version>
     </reapack>
-    <reapack name="McS - EnvoyLope - Razor on Two Points.lua" type="script" desc="All in name.">
+    <reapack name="McS - EnvoyLope - Razor on Two Points.lua" type="script" desc="Razor on Two Points">
       <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Razor%20on%20Two%20Points.lua</source>
       </version>
     </reapack>
-    <reapack name="McS - EnvoyLope - Select Envelope under mouse cursor.lua" type="script" desc="All in name.">
+    <reapack name="McS - EnvoyLope - Select Envelope under mouse cursor.lua" type="script" desc="Select Envelope under mouse cursor">
       <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Select%20Envelope%20under%20mouse%20cursor.lua</source>
       </version>
     </reapack>
-    <reapack name="McS - EnvoyLope - Service Execution.lua" type="script" desc="All in name.">
+    <reapack name="McS - EnvoyLope - Service Execution.lua" type="script" desc="Service Execution Script">
       <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Service%20Execution.lua</source>
       </version>
