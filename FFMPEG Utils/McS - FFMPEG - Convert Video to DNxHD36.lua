@@ -1,6 +1,6 @@
  -- @description Converts Video to DNxHD mov file for smooth editing purposes.
  -- @author McSound
- -- @version 1.1
+ -- @version 1.0
  -- @instructions Select Video file(s) and run script. 
  -- @repository https://github.com/McSound/Reaper-scripts/raw/master/index.xml
  -- @licence GPL v3
