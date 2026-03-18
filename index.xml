@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="McSound_Scripts" commit="1b91e2ea9390616f2560340c8e8161928c9c4706">
+<index version="1" name="McSound_Scripts" commit="c8b3fa40bf3148640a462e61723937d26e2efcfe">
   <category name="EnvoyLope">
-    <reapack name="McS - EnvoyLope - Copy Envelopes under Razors to the Track under mouse cursor.lua" type="script" desc="All in name.">
-      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
-        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Copy%20Envelopes%20under%20Razors%20to%20the%20Track%20under%20mouse%20cursor.lua</source>
-      </version>
-    </reapack>
-    <reapack name="McS - EnvoyLope - Delete Points in Razor.lua" type="script" desc="All in name.">
-      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
-        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Delete%20Points%20in%20Razor.lua</source>
+    <reapack name="McS - EnvoyLope - Copy Envelopes under Razors to the Track under mouse cursor.lua" type="script" desc="Copy Envelopes under Razors to the Track under mouse cursor">
+      <version name="1.08" author="McSound" time="2026-03-18T21:28:18Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/c8b3fa40bf3148640a462e61723937d26e2efcfe/EnvoyLope/McS%20-%20EnvoyLope%20-%20Copy%20Envelopes%20under%20Razors%20to%20the%20Track%20under%20mouse%20cursor.lua</source>
       </version>
     </reapack>
     <reapack name="McS - EnvoyLope - Keyb_Fine_Down.lua" type="script" desc="All in name.">
@@ -39,11 +34,6 @@
     <reapack name="McS - EnvoyLope - Keyb_Tiny_Up.lua" type="script" desc="All in name.">
       <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Keyb_Tiny_Up.lua</source>
-      </version>
-    </reapack>
-    <reapack name="McS - EnvoyLope - Main GUI.lua" type="script" desc="Main Envoylope script you shoud run.">
-      <version name="1.08" author="McSound" time="2026-02-08T11:44:33Z">
-        <source main="main">https://github.com/McSound/Reaper-scripts/raw/ca1a8b93f6fca4c50c3745e30babd8c7565bf61b/EnvoyLope/McS%20-%20EnvoyLope%20-%20Main%20GUI.lua</source>
       </version>
     </reapack>
     <reapack name="McS - EnvoyLope - Mouse_Wheel_Fine.lua" type="script" desc="All in name.">
