@@ -1,20 +1,9 @@
- --@ description: All in name.
- --@ author: McSound
- --@ version:1.09
- --@ provides [nomain] .
- --@ instructions: Select Video file(s) and run script. 
- --@ repository: https://github.com/McSound/Reaper-scripts/raw/master/index.xml
- --@ licence: GPL v3
- --@ forum thread:
- --@ Reaper v 7.61
- -- suka
---[[
- * Changelog:
- * v1.0 (2025-11-14)
-  + Initial Release
---]]
-
----- Main Execution Script v1.08 ----
+ -- @description Service Execution Script
+ -- @author McSound
+ -- @version 1.08
+ -- @repository https://github.com/McSound/Reaper-scripts/raw/master/index.xml
+ -- @licence GPL v3
+ 
 
 local r = reaper
 local floor = math.floor
@@ -798,6 +787,3 @@ end
 
 Main()
 r.UpdateArrange()
-
-
-
