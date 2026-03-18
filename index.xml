@@ -87,10 +87,6 @@
       <version name="1.0" author="McSound" time="2026-02-15T12:23:14Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/21bee42d0171e149aa676f66680af641e9731f26/FFMPEG%20Utils/McS%20-%20FFMPEG%20-%20Convert%20Video%20to%20DNxHD36.lua</source>
       </version>
-      <version name="1.1" author="McSound" time="2026-03-18T22:01:37Z">
-        <source main="main">https://github.com/McSound/Reaper-scripts/raw/8f13b7732446f45ec25982a57768152168cc7c7a/FFMPEG%20Utils/McS%20-%20FFMPEG%20-%20Convert%20Video%20to%20DNxHD36.lua</source>
-        <source file="FFMPEG/place_ffmpeg_files_here.readme">https://github.com/McSound/Reaper-scripts/raw/8f13b7732446f45ec25982a57768152168cc7c7a/FFMPEG%20Utils/FFMPEG/place_ffmpeg_files_here.readme</source>
-      </version>
     </reapack>
     <reapack name="McS - FFMPEG - Convert Video to MP4-1KeyFrame.lua" type="script" desc="Converts Video to MP4 with 1 key frame for archiving or smooth editing purposes.">
       <version name="1.0" author="McSound" time="2026-02-08T10:30:07Z">
