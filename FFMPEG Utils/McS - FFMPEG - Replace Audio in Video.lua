@@ -32,8 +32,8 @@ function round(num, numDecimalPlaces)
   return floor(num * mult + 0.5) / mult
 end
 
-local ffmpeg_file = reaper_path..sep..'UserPlugins'..sep..(windows and 'ffmpeg.exe' or 'ffmpeg') -- v4.4.1 work faster !!! ???
--- local ffmpeg_file = reaper_path..sep..'Scripts'..sep..'McSound'..sep..'FFMPEG Utils'..sep..'FFMPEG'..sep..(windows and 'ffmpeg.exe' or 'ffmpeg')
+-- local ffmpeg_file = reaper_path..sep..'UserPlugins'..sep..(windows and 'ffmpeg.exe' or 'ffmpeg') -- v4.4.1 work faster !!! ???
+local ffmpeg_file = reaper_path..sep..'Scripts'..sep..'McSound Scripts'..sep..'FFMPEG Utils'..sep..'FFMPEG'..sep..(windows and 'ffmpeg.exe' or 'ffmpeg')
 -- Msg(ffmpeg_file)
 
 if not r.file_exists(ffmpeg_file) then
