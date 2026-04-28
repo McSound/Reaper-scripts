@@ -1,0 +1,366 @@
+ --@ description: McS - FFMPEG - Implode Items Mono to Stereo-Multichannel
+ --@ author: McSound
+ --@ version:1.0
+ --@ instructions: Select at once all items that you want to convert to stereo, 
+ --                L-R-C, L-R-Lb-Rb, L-R-C-Lb-Rb or L-R-C-LFE-Lb-Rb files. 
+ --                They'll implode to the format corresponding to to the num of channels found.
+ --@ repository: https://github.com/McSound/Reaper-scripts/raw/master/index.xml
+ --@ licence: GPL v3
+ --@ forum thread:
+ --@ Reaper v 7.69
+
+local r = reaper
+local modf = math.modf
+local floor = math.floor
+local abs = math.abs
+local log = math.log
+local tonum = tonumber
+local tostr = tostring
+local huge = math.huge
+
+local windows = string.find(r.GetOS(), "Win") ~= nil
+local sep = package.config:sub(1,1)
+local reaper_path = r.GetResourcePath()
+local proj_media_path = r.GetProjectPath()
+
+
+function Msg(str) r.ShowConsoleMsg(tostring(str) .. "\n") end
+
+function round(num, numDecimalPlaces)
+  local mult = 10^(numDecimalPlaces or 0)
+  return floor(num * mult + 0.5) / mult
+end
+
+-- local ffmpeg_file = reaper_path..sep..'UserPlugins'..sep..(windows and 'ffmpeg.exe' or 'ffmpeg')
+local ffmpeg_file = reaper_path..sep..'Scripts'..sep..'McSound'..sep..'FFMPEG Utils'..sep..'FFMPEG'..sep..(windows and 'ffmpeg.exe' or 'ffmpeg')
+
+if not r.file_exists(ffmpeg_file) then
+  ffmpeg_file = reaper_path..sep..'UserPlugins'..sep..(windows and 'ffmpeg.exe' or 'ffmpeg')
+end
+
+if not r.file_exists(ffmpeg_file) then
+  Msg("ffmpeg.exe is not found!")
+  return
+end
+
+-- local item_exist = {}
+local item_grp = {}
+local output_file_exist = {}
+local output_file = {}
+
+
+local ext_avail = {
+                   ["wav"]=true, 
+                   ["aif"]=true,
+                   ["aiff"]=true,
+                   ["mp3"]=true, 
+                   ["wma"]=true, 
+                   ["flac"]=true, 
+                   ["ogg"]=true, 
+                   ["w4a"]=true,
+                  }
+
+local pattern = {
+                  {"%.L","%.R","%.C","%.LFE","%.Ls","%.Rs"},
+                  {"_L","_R","_C","_LFE","_Ls","_Rs"}, 
+                  {"%.%d+"},
+                  -- "","","","","","",
+                  -- "","","","","","",
+                  -- "","","","","","",
+                  }
+
+function execute(num)
+  local file_in = item_grp[num].file_in
+  local file_out = item_grp[num].file_out
+  local path = item_grp[num].path
+  -- local ext = item_grp[i].ext
+  local mode = #file_in
+
+  -- 6 mono wavs to 5.1 wav
+  --ffmpeg -i front_left.wav -i front_right.wav -i front_center.wav -i lfe.wav -i back_left.wav -i back_right.wav -filter_complex "[0:a][1:a][2:a][3:a][4:a][5:a] amerge=inputs=6" output.wav
+
+  local inp_sect
+  local arguments
+  local bits, bits_24, bits_32 = "","pcm_s24le","pcm_s32le"
+  if mode == 2 then
+    inp_sect = " -i "..'"'..file_in[1]..'"'.." -i "..'"'..file_in[2]..'" '
+    arguments = [[ -filter_complex "[0:a][1:a]join=inputs=2:channel_layout=stereo[a]" -map "[a]" -c:a pcm_s24le ]]
+  elseif mode == 3 then
+    inp_sect = " -i "..'"'..file_in[1]..'"'.." -i "..'"'..file_in[2]..'"'.." -i "..'"'..file_in[3]..'" '
+    arguments = [[ -filter_complex "[0:a][1:a][2:a]join=inputs=3:channel_layout=3.0:map=0.0-FL|1.0-FR|2.0-FC[a]" -map "[a]" -c:a pcm_s24le ]]
+  elseif mode == 4 then
+    inp_sect = " -i "..'"'..file_in[1]..'"'.." -i "..'"'..file_in[2]..'"'.." -i "..'"'..file_in[3]..'"'.." -i "..'"'..file_in[4]..'" '
+    arguments = [[ -filter_complex "[0:a][1:a][2:a][3:a]join=inputs=4:channel_layout=4.0:map=0.0-FL|1.0-FR|2.0-BL|3.0-BR[a]" -map "[a]" -c:a pcm_s24le ]]
+  elseif mode == 5 then
+    inp_sect = " -i "..'"'..file_in[1]..'"'.." -i "..'"'..file_in[2]..'"'.." -i "..'"'..file_in[3]..'"'.." -i "..'"'..file_in[4]..'"'.." -i "..'"'..file_in[5]..'" '
+    arguments = [[ -filter_complex "[0:a][1:a][2:a][3:a][4:a]join=inputs=5:channel_layout=5.0:map=0.0-FL|1.0-FR|2.0-FC|3.0-BL|4.0-BR[a]" -map "[a]" -c:a pcm_s24le ]]
+  elseif mode == 6 then
+    inp_sect = " -i "..'"'..file_in[1]..'"'.." -i "..'"'..file_in[2]..'"'.." -i "..'"'..file_in[3]..'"'.." -i "..'"'..file_in[4]..'"'.." -i "..'"'..file_in[5]..'"'.." -i "..'"'..file_in[6]..'" '
+    arguments = [[ -filter_complex "[0:a][1:a][2:a][3:a][4:a][5:a]join=inputs=6:channel_layout=5.1:map=0.0-FL|1.0-FR|2.0-FC|3.0-LFE|4.0-BL|5.0-BR[a]" -map "[a]" -c:a pcm_s24le ]]
+  end
+
+  -- -i front_left.wav -i front_right.wav -i front_center.wav -i lfe.wav -i back_left.wav -i back_right.wav -filter_complex "[0:a][1:a][2:a][3:a][4:a][5:a] amerge=inputs=6" output.wav
+
+  -- local arguments = ' -c:v dnxhd -vf "scale=1920:1080,format=yuv422p" -b:v 36M -c:a pcm_s16le -map 0 '
+  local command = '"'..ffmpeg_file..'"'.." -n"..inp_sect..arguments..'"'..file_out..'"'
+
+  -- Msg(command)
+  
+  if windows then
+    local retval = r.ExecProcess(command, 0)
+  else
+    os.execute(command)
+  end
+  -- r.InsertMedia(output_file, 0)
+end
+
+
+function fix_path_name(path)
+  path = path:gsub([[\\]], [[\]])
+  path = path:gsub([[/]], [[\]])
+  return path
+end
+
+function get_item_params(item, take)
+  local source_length, sample_rate, num_channels, bitdepth, bitrate, 
+  filename, path, name, ext, name_ext = nil, nil, nil, nil, nil, nil, nil, nil, nil, nil
+
+  local track = r.GetMediaItem_Track(item) 
+  local track_num = r.GetMediaTrackInfo_Value(track, "IP_TRACKNUMBER")
+  local take_off = r.GetMediaItemTakeInfo_Value(take,"D_STARTOFFS")
+  local st = r.GetMediaItemInfo_Value(item,"D_POSITION")
+  local ln = r.GetMediaItemInfo_Value(item,"D_LENGTH")
+  local en = st + ln
+
+  -- local loop = r.GetMediaItemInfo_Value(item, "B_LOOPSRC")
+  -- local mute = r.GetMediaItemInfo_Value(item, "B_MUTE")
+  -- local lock = r.GetMediaItemInfo_Value(item, "C_LOCK")
+  local _, _, _, _, _, reverse = r.BR_GetMediaSourceProperties(take)
+  -- local vol = r.GetMediaItemInfo_Value(item, "D_VOL")
+  -- local pan = r.GetMediaItemTakeInfo_Value(take, "D_PAN")
+  -- local pitch = r.GetMediaItemTakeInfo_Value(take, "D_PITCH")
+  -- local playrate = r.GetMediaItemTakeInfo_Value(take, "D_PLAYRATE")
+  -- local preserve_pitch = r.GetMediaItemTakeInfo_Value(take,"B_PPITCH")
+  -- local cm = r.GetMediaItemTakeInfo_Value(take,"I_CHANMODE")
+  -- local fx = r.TakeFX_GetCount(take)
+  -- local count_env = r.CountTakeEnvelopes(take)
+  local ret, chunk = r.GetItemStateChunk(item, "", false)
+  local source = r.GetMediaItemTake_Source(take)
+  if source then
+    source_length = r.GetMediaSourceLength(source)
+    sample_rate = r.GetMediaSourceSampleRate(source)
+    num_channels = r.GetMediaSourceNumChannels(source)
+    bitdepth = r.CF_GetMediaSourceBitDepth(source)
+    bitrate = r.CF_GetMediaSourceBitRate(source)
+    filename = r.GetMediaSourceFileName(source)
+    filename = filename:gsub([[\\]], [[\]])
+    filename = filename:gsub([[/]], [[\]])
+    path, name, ext = string.match(filename, "(.-)([^\\]-)%p([^%.]+)$")
+    path = path:match("(.+)\\$") -- delete last "\"" in path
+    name_ext = name.."."..ext
+
+  end
+  return {item=item, take=take, st=st, ln=ln, en=en, take_off=take_off, chunk=chunk,
+    track=track, track_num=track_num, 
+  -- loop=loop, mute=mute, lock=lock, reverse=reverse, cm=cm, fx=fx, 
+  -- vol=vol, pan=pan, pitch=pitch, playrate=playrate, preserve_pitch=preserve_pitch,
+  source=source, source_length=source_length, sample_rate=sample_rate, 
+  num_channels=num_channels, bitdepth=bitdepth, bitrate=bitrate, --count_env=count_env,
+  filename=filename, path=path, name=name, ext=ext, name_ext=name_ext,
+  file_out=nil, ptr_num=nil}  
+end
+
+function get_sel_items_table()
+  local sel_item = {}
+  local count_sel_items = r.CountSelectedMediaItems(0)
+  for i=0,count_sel_items-1 do
+    local item = r.GetSelectedMediaItem(0, i)
+    local take = r.GetActiveTake(item)
+    if take and not r.TakeIsMIDI(take) then
+      local item_par = get_item_params(item, take)
+      if item_par.source~=nil then
+        table.insert(sel_item, item_par)
+      end
+    end
+  end
+  return sel_item
+end
+
+function find_pattern(name)
+  for i=1, #pattern do
+    if i==3 then
+      local str = "^(.+)("..pattern[3][1]..")$"
+      local name_without_ptr, ptr = name:match(str)
+      local found_num = ptr:match("%.(%d+)")
+      if found_num then return 3, 1, name_without_ptr, found_num end
+    else
+      for j=1,#pattern[i] do
+        -- Msg(pattern[i][j])
+        -- "^(.+)%.(.*)$"
+        local str = "^(.+)("..pattern[i][j]..")$"
+        -- Msg(str)
+        local name_without_ptr, ptr = name:match(str)
+        if ptr then return i, j, name_without_ptr, found_num end
+      end
+    end
+  end
+  return nil
+end
+
+function find_group(out_filename, st, en, track_num, ptr_num)
+  for i=1,#item_grp do
+    -- Msg(item_grp[i].file_out)
+    -- Msg(out_filename)
+    -- Msg(item_grp[i].st)
+    -- Msg(st)
+    -- Msg(item_grp[i].en)
+    -- Msg(en)
+    -- Msg(item_grp[i].track_num)
+    -- Msg(track_num)
+    -- Msg(ptr_num)
+    -- Msg(item_grp[i].file_in[ptr_num-1])
+    -- Msg("")
+    if item_grp[i].file_out == out_filename and 
+       item_grp[i].st==st and item_grp[i].en==en and 
+       track_num == item_grp[i].track_num+1 and 
+       item_grp[i].file_in[ptr_num-1]~=nil then
+      return i
+    end
+  end
+  return nil
+end
+
+function create_item_grp(sel_items, idx, ptr_num, out_filename, mode)
+  -- Msg("create")
+  -- Msg(sel_items[idx].filename)
+  local t = {}
+  -- table.insert(t, {nil,nil,nil,nil,nil,nil})
+  t[ptr_num] = sel_items[idx].filename
+  local st = sel_items[idx].st
+  local en = sel_items[idx].en
+  local track_num = sel_items[idx].track_num
+  table.insert(item_grp, {mode=mode, st=st, en=en, track_num=track_num, file_in=t, file_out=out_filename})
+  -- Msg(item_grp[#item_grp].file_in[ptr_num])
+end
+
+function resort_item_group_file_in_idx()
+  for i=1,#item_grp do
+    if item_grp[i].mode==2 then
+      -- Msg("i")
+      -- Msg(i)
+      local min = huge
+      for k,v in pairs(item_grp[i].file_in) do
+        -- Msg(k)
+        if k<min then min=k end
+      end
+      if min > 1 then
+      -- Msg("resort")
+        local t = {}
+        for k,v in pairs(item_grp[i].file_in) do
+          -- Msg(k)
+          -- Msg(k-min+1)
+          t[k-min+1] = v
+        end
+        item_grp[i].file_in = t
+      end
+    end
+  end
+end
+
+function Main()
+  local count_sel_items = r.CountSelectedMediaItems(0)
+  if count_sel_items == 0 then return end
+
+  local sel_items = get_sel_items_table()
+  if #sel_items>0 then
+    -- Msg(#sel_items)
+    local first_track_num = sel_items[1].track_num
+    for i=1,#sel_items do
+      local ext_input = string.lower(sel_items[i].ext)
+      if ext_avail[ext_input] then
+        local path = sel_items[i].path
+        local name = sel_items[i].name
+        local ext  = sel_items[i].ext
+        local ptr_row, ptr_num, name_without_ptr, found_num = find_pattern(name)
+        local mode = 1 -- mode with basic patterns _L, _R etc.
+
+        if ptr_num then
+          if found_num~=nil then
+            ptr_num = tonum(found_num)
+            -- Msg(ptr_num)
+            -- special mode with number patterns, we have to find out L,R,C,LFE,LS,RS chaanels by accending numbers found in patterns
+            mode = 2
+          end
+          -- Msg(mode)
+          -- local source_length, sample_rate, num_channels, bitdepth, bitrate, size = get_file_properties(filename)
+          -- Msg("new_folder")
+          -- Msg(new_folder)
+          -- if not folder_exists(new_folder) then-- if folder is not found
+            -- r.RecursiveCreateDirectory(new_folder, 0)
+          -- end
+          local out_filename = proj_media_path..sep..name_without_ptr..".wav"
+          sel_items[i].ptr_num = ptr_num
+          sel_items[i].file_out = out_filename
+          -- Msg(out_filename)
+          -- local out_filename = "E:\\1"..sep..name_without_ptr..".wav"
+          if sel_items[i].track_num==first_track_num then
+            -- Msg(ptr_num)
+            create_item_grp(sel_items, i, ptr_num, out_filename, mode)
+          else
+            local st = sel_items[i].st
+            local en = sel_items[i].en
+            local track_num = sel_items[i].track_num
+            local num_g = find_group(out_filename, st, en, track_num, ptr_num)
+            -- Msg(num_g)
+            if num_g~=nil then
+              -- Msg(ptr_num)
+              item_grp[num_g].file_in[ptr_num] = sel_items[i].filename
+              sel_items[i].ptr_num = -1
+            else
+              -- Msg(ptr_num)
+              create_item_grp(sel_items, i, ptr_num, out_filename, mode)
+            end
+          end
+        end
+
+      end        
+    end
+
+  end
+
+  if #item_grp>0 then
+    resort_item_group_file_in_idx() -- works if item_group is mode 2 only
+
+    for i=1, #item_grp do
+      if not output_file_exist[item_grp[i].file_out] then
+        output_file_exist[item_grp[i].file_out] = true
+        if not r.file_exists(item_grp[i].file_out) then 
+          execute(i)
+        end
+      end
+    end
+
+    for i= #sel_items, 1, -1 do
+      if sel_items[i].ptr_num~=-1 then
+        sel_items[i].chunk = sel_items[i].chunk:gsub([[FILE ".+"]], [[FILE "]]..sel_items[i].file_out..[["]])
+        local new_chunk = sel_items[i].chunk:gsub('({.-})', function() return r.genGuid() end)
+        r.SetItemStateChunk(sel_items[i].item, new_chunk, false)
+      else
+        r.DeleteTrackMediaItem(sel_items[i].track, sel_items[i].item)
+      end
+    end
+
+    r.Main_OnCommand(40245, 0) --Peaks: Build any missing peaks for selected items
+
+  end
+
+end
+
+r.PreventUIRefresh(1)
+r.Undo_BeginBlock()
+
+Main()
+
+r.Undo_EndBlock("Name of Action", -1)
+r.PreventUIRefresh(-1)
+r.UpdateArrange()

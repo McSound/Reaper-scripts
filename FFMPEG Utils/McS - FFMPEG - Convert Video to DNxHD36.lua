@@ -1,4 +1,4 @@
- -- @description Converts Video to DNxHD mov file for smooth editing purposes.
+ -- @description McS - FFMPEG - Convert Video to DNxHD36
  -- @author McSound
  -- @version 1.0
  -- @instructions Select Video file(s) and run script. 

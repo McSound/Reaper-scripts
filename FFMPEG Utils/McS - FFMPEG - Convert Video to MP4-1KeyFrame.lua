@@ -1,4 +1,4 @@
- -- @description Converts Video to MP4 with 1 key frame for archiving or smooth editing purposes.
+ -- @description McS - FFMPEG - Convert Video to MP4-1KeyFrame
  -- @author McSound
  -- @version 1.0
  -- @instructions Select Video file(s) and run script. 

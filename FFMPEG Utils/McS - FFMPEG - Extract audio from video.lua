@@ -1,4 +1,4 @@
- -- @description Extracts audio from videofile and places audio item to Guide track.
+ -- @description McS - FFMPEG - Extract audio from video
  -- @author McSound
  -- @version 1.0
  -- @instructions Select Video file(s) and run script.
