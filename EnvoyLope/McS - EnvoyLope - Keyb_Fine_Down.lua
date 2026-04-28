@@ -1,4 +1,4 @@
- -- @description Keyb_Fine_Down
+ -- @description McS - EnvoyLope - Keyb_Fine_Down
  -- @author McSound
  -- @version 1.08
  -- @repository https://github.com/McSound/Reaper-scripts/raw/master/index.xml

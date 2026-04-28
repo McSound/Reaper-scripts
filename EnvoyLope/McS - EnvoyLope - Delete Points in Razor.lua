@@ -1,4 +1,4 @@
- -- @description Delete Points in Razor area
+ -- @description McS - EnvoyLope - Delete Points in Razor
  -- @author McSound
  -- @version 1.08
  -- @repository https://github.com/McSound/Reaper-scripts/raw/master/index.xml

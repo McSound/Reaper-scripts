@@ -1,4 +1,4 @@
- -- @description Razor on Two Points - Add Selection
+ -- @description McS - EnvoyLope - Razor on Two Points - Add Selection
  -- @author McSound
  -- @version 1.08
  -- @repository https://github.com/McSound/Reaper-scripts/raw/master/index.xml

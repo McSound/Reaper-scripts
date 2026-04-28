@@ -1,4 +1,4 @@
- -- @description Keyb_Tiny_Up
+ -- @description McS - EnvoyLope - Keyb_Tiny_Up
  -- @author McSound
  -- @version 1.08
  -- @repository https://github.com/McSound/Reaper-scripts/raw/master/index.xml

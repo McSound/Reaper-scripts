@@ -1,4 +1,4 @@
- -- @description Mouse_Wheel_Tiny
+ -- @description McS - EnvoyLope - Mouse_Wheel_Tiny
  -- @author McSound
  -- @version 1.08
  -- @repository https://github.com/McSound/Reaper-scripts/raw/master/index.xml

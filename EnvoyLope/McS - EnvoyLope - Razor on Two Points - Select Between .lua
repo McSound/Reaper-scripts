@@ -1,4 +1,4 @@
- -- @description Razor on Two Points - Select Between
+ -- @description McS - EnvoyLope - Razor on Two Points - Select Between 
  -- @author McSound
  -- @version 1.08
  -- @repository https://github.com/McSound/Reaper-scripts/raw/master/index.xml

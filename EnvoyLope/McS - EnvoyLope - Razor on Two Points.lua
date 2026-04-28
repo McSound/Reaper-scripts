@@ -1,4 +1,4 @@
- -- @description Razor on Two Points
+ -- @description McS - EnvoyLope - Razor on Two Points
  -- @author McSound
  -- @version 1.08
  -- @repository https://github.com/McSound/Reaper-scripts/raw/master/index.xml

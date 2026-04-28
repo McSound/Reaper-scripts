@@ -1,4 +1,4 @@
- -- @description Main EnvoyLope GUI script with settings
+ -- @description McS - EnvoyLope - GUI
  -- @author McSound
  -- @version 1.08
  -- @repository https://github.com/McSound/Reaper-scripts/raw/master/index.xml

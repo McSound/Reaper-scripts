@@ -1,4 +1,4 @@
- -- @description Keyb_Rough_Up
+ -- @description McS - EnvoyLope - Keyb_Rough_Up
  -- @author McSound
  -- @version 1.08
  -- @repository https://github.com/McSound/Reaper-scripts/raw/master/index.xml
