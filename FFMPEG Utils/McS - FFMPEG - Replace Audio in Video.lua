@@ -1,12 +1,11 @@
  --@description McS - FFMPEG - Replace Audio in Video
  --@author McSound
  --@version 1.0
- --@instructions   Select Video file or specify in browser. Then specify Audio - wav file. 
+ --@instructions   Select Video item(s) or specify them in browser. Then specify Audio file. 
  --                If your video codec is H264 then you should choose 1 (for making ac3 audiotrack)
  --                If your video codec is DHxHD or ProRes then choose 2 (for making pcm audiotrack)
  --                You can select multiple video files and specify audio for each of them to perform batch conversion.
  --@repository https://github.com/McSound/Reaper-scripts/raw/master/index.xml
- --@licence GPL v3
 
 
 local AAC_bitrate = "320k"
@@ -25,22 +24,18 @@ local sep = package.config:sub(1,1)
 local reaper_path = r.GetResourcePath()
 
 function Msg(str) r.ShowConsoleMsg(tostring(str) .. "\n") end
--- Msg(sep)
 
 function round(num, numDecimalPlaces)
   local mult = 10^(numDecimalPlaces or 0)
   return floor(num * mult + 0.5) / mult
 end
 
--- local ffmpeg_file = reaper_path..sep..'UserPlugins'..sep..(windows and 'ffmpeg.exe' or 'ffmpeg') -- v4.4.1 work faster !!! ???
 local ffmpeg_file = reaper_path..sep..'Scripts'..sep..'McSound Scripts'..sep..'FFMPEG Utils'..sep..'FFMPEG'..sep..(windows and 'ffmpeg.exe' or 'ffmpeg')
--- Msg(ffmpeg_file)
 
 if not r.file_exists(ffmpeg_file) then
   ffmpeg_file = reaper_path..sep..'UserPlugins'..sep..(windows and 'ffmpeg.exe' or 'ffmpeg')
 end
 
--- Msg(ffmpeg_file)
 
 if not r.file_exists(ffmpeg_file) then
   Msg("ffmpeg.exe is not found!")
@@ -90,7 +85,6 @@ function execute(pathV, nameV, extV, audio_file, track, item, pos)
 
 
   local command = '"'..ffmpeg_file..'"'.." -i "..'"'..video_file..'"'.." -i "..'"'..audio_file..'"'..arguments..'"'..output_file..'"'
--- Msg(command)
   if track~= nil and item~=nil then
     r.DeleteTrackMediaItem(track, item)
   end
@@ -114,7 +108,6 @@ function audio_format_question()
   local show_str = "Press number: Your Video is MP4 or H264- 1,  Your Video is Prores or DNxHD- 2"
   local userOK, val
   repeat
-    -- "Enter full path of the folder:, File Name, extrawidth=400"
     userOK, val = r.GetUserInputs(show_str, 1, "Press 1 (AAC) or 2 (WAV),extrawidth=100", "")
     if not userOK then return end
     if val ~= "1" and val ~= "2" then

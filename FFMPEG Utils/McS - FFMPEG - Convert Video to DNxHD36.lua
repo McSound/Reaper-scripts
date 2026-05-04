@@ -3,7 +3,6 @@
  -- @version 1.0
  -- @instructions Select Video file(s) and run script. 
  -- @repository https://github.com/McSound/Reaper-scripts/raw/master/index.xml
- -- @licence GPL v3
  -- @provides
  --   FFMPEG/place_ffmpeg_files_here.readme
  
@@ -29,7 +28,6 @@ function round(num, numDecimalPlaces)
   return floor(num * mult + 0.5) / mult
 end
 
--- local ffmpeg_file = reaper_path..sep..'UserPlugins'..sep..(windows and 'ffmpeg.exe' or 'ffmpeg')
 local ffmpeg_file = reaper_path..sep..'Scripts'..sep..'McSound Scripts'..sep..'FFMPEG Utils'..sep..'FFMPEG'..sep..(windows and 'ffmpeg.exe' or 'ffmpeg')
 
 if not r.file_exists(ffmpeg_file) then
@@ -64,15 +62,9 @@ function file_codec(command,txt_file)
 end
 
 function execute(path, name, ext, track, pos, item)
-  -- local sep = windows and '\\' or '/'
 
-  -- local reaper_path = r.GetResourcePath()
   local video_file = path..sep..name.."."..ext
   local output_file = path..sep..name.."-DNxHD36.mov"
-  -- local arguments1 = " -v error -select_streams v:0 -show_entries stream=codec_name -of csv=s=;:p=0 "
-  -- local txt_file = reaper_path..sep..'Scripts'..sep..'McSound'..sep..'video_info.txt'
-  -- local ffprobe_file = reaper_path..sep..'UserPlugins'..sep..(windows and 'ffprobe.exe' or 'ffprobe')
-  -- local command1 = '"'..ffprobe_file..'"'..arguments1..'"'..video_file..'"'..' >'..'"'..txt_file..'"'
 
   local name_low = string.lower(name)
   local input_file_codec = ""
@@ -92,11 +84,8 @@ function execute(path, name, ext, track, pos, item)
     r.SetEditCurPos(pos, false, false)
     r.InsertMedia(output_file, 0)
   elseif input_file_codec ~= "dnxhd" then
-    -- local arguments2 = ' -c:v dnxhd -vf "scale=1920:1080:force_original_aspect_ratio=decrease,format=yuv422p" -b:v 36M -c:a pcm_s16le -map 0 '
     local arguments2 = ' -c:v dnxhd -vf "scale=1920:1080,format=yuv422p" -b:v 36M -c:a pcm_s16le -map 0 '
     local command2 = '"'..ffmpeg_file..'"'.." -n -i "..'"'..video_file..'"'..arguments2..'"'..output_file..'"'
-
-    -- Msg(command2)
 
     if item ~= nil then
       r.DeleteTrackMediaItem(track, item)
@@ -150,9 +139,6 @@ function Main()
       end
     end
 
-    -- r.ShowMessageBox("Please wait...", "Processing files", 0)
-    -- mrp_window = r.MRP_CreateWindow("Processing files")
-    -- r.MRP_SetControlBounds(mrp_window, "Processing files", 960, 540, 200, 100)
     for i=1,#v_items do
       execute(v_items[i].path, v_items[i].name, v_items[i].ext, v_items[i].track, v_items[i].pos, v_items[i].item)
     end
@@ -180,11 +166,7 @@ function Main()
       end
 
       if #v_items > 0 then
-        -- r.ShowMessageBox("Please wait...", "Processing files", 0)
-        -- mrp_window = r.MRP_CreateWindow("Processing files")
-        -- r.MRP_SetControlBounds( mrp_window, "Processing files", 960, 540, 200, 100)
         for i=1, #v_items do
-
           execute(v_items[i].path, v_items[i].name, v_items[i].ext, track , pos, nil)
         end
       end
@@ -225,10 +207,6 @@ function Main()
 
   local time_msg = "Done! Time processing:\n"..disp_h..disp_m..disp_s
   Msg(time_msg)
-
-  -- local msg_hwnd = r.JS_Window_Find("Processing files", true)
-  -- r.JS_WindowMessage_Send(msg_hwnd, "WM_CLOSE")
-  -- r.MRP_DestroyWindow(mrp_window)
 
 end
 

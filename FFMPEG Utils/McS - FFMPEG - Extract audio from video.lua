@@ -3,8 +3,6 @@
  -- @version 1.0
  -- @instructions Select Video file(s) and run script.
  -- @repository https://github.com/McSound/Reaper-scripts/raw/master/index.xml
- -- @licence GPL v3
- 
 
 local r = reaper
 local huge = math.huge
@@ -26,7 +24,6 @@ end
 local sep = package.config:sub(1,1)
 local windows = string.find(r.GetOS(), "Win") ~= nil
 local reaper_path = r.GetResourcePath()
--- local ffmpeg_file = reaper_path..sep..'UserPlugins'..sep..(windows and 'ffmpeg.exe' or 'ffmpeg')
 local ffmpeg_file = reaper_path..sep..'Scripts'..sep..'McSound Scripts'..sep..'FFMPEG Utils'..sep..'FFMPEG'..sep..(windows and 'ffmpeg.exe' or 'ffmpeg')
 
 if not r.file_exists(ffmpeg_file) then
@@ -49,12 +46,8 @@ function ffmpeg_execute(path, name, ext)
   local arguments = ' -vn -acodec pcm_s24le -ar 48000 -ac 2 '
   local command = '"'..ffmpeg_file..'"'.." -n -i "..'"'..video_file..'"'..arguments..'"'..output_file..'"'
 
-  -- ffmpeg -i input.mp4 -vn -acodec pcm_s24le -ar 48000 -ac 2 output.wav
-
   if windows then
     local retval = r.ExecProcess(command, 0)
-    -- Msg(output_file)
-    -- Msg("done!")
     table.insert(check, output_file)
   else
     os.execute(command)
@@ -64,7 +57,6 @@ end
 function create_guide(path, name, ext, track, st, ln, take_off)
   if r.file_exists(path..sep..name..".wav") then
     local source = r.PCM_Source_CreateFromFile(path..sep..name..".wav")
-    -- Msg(source)
     if source then
       local new_item = r.AddMediaItemToTrack(track)
       local take = r.AddTakeToMediaItem(new_item)
@@ -101,8 +93,6 @@ function Main()
     if str == 'VIDEO' then
       sel_items[i+1] = {item=item, st=st, ln=ln, take_off=take_off, 
       track=track, track_name=name, track_num=track_num, file_name=file_name, done=false}
-      -- Msg('Some of selected files are not VIDEO! Please select only VIDEO files')
-      -- return
     end
   end
 

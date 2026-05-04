@@ -3,7 +3,6 @@
  -- @version 1.0
  -- @instructions Select Video file(s) and run script. 
  -- @repository https://github.com/McSound/Reaper-scripts/raw/master/index.xml
- -- @licence GPL v3
  
 
 local r = reaper
@@ -26,7 +25,6 @@ function round(num, numDecimalPlaces)
   return floor(num * mult + 0.5) / mult
 end
 
--- local ffmpeg_file = reaper_path..sep..'UserPlugins'..sep..(windows and 'ffmpeg.exe' or 'ffmpeg')
 local ffmpeg_file = reaper_path..sep..'Scripts'..sep..'McSound Scripts'..sep..'FFMPEG Utils'..sep..'FFMPEG'..sep..(windows and 'ffmpeg.exe' or 'ffmpeg')
 
 if not r.file_exists(ffmpeg_file) then
@@ -53,28 +51,6 @@ function execute(path, name, ext, track, pos, item)
   local video_file = path..name.."."..ext
   local output_file = path..name.."-KF1.mp4"
   
-  -- local arguments1 = " -v error -select_streams v:0 -show_entries stream=codec_name,width,height -of csv=s=;:p=0 "
-  -- local txt_file = reaper_path..sep..'Scripts'..sep..'McSound'..sep..'video_info.txt'
-  -- local ffprobe_file = reaper_path..sep..'UserPlugins'..sep..(windows and 'ffprobe.exe' or 'ffprobe')
-  -- local command1 = '"'..ffprobe_file..'"'..arguments1..'"'..video_file..'"'..' >'..'"'..txt_file..'"'
-
-  -- if windows then
-    -- local retval = r.ExecProcess(command1, 0)
-    -- if retval== "NULL" then Msg("Something's gone really wrong") end
-  -- else
-    -- os.execute(command1)
-  -- end
--- 
-  -- local f = io.open(txt_file)
-  -- local file_lines = {}
-  -- local i = 1
-  -- for line in f:lines() do file_lines[i] = line i = i + 1 end
-  -- f:close()
-  -- local codec, width, height, fps, bitrate = "","","","",""
-  -- if #file_lines~=0 then
-    -- codec, width, height, fps, bitrate = file_lines[1]:match("(.+);(.+);(.+);(.+);(.+)")
-  -- end
-
 
   local name_low = string.lower(name)
   local input_file_codec = ""
