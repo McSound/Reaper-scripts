@@ -161,9 +161,11 @@ function Main()
 
     for i= #sel_items, 1, -1 do
       if sel_items[i].file_out~=nil then
-        sel_items[i].chunk = sel_items[i].chunk:gsub([[FILE ".+"]], [[FILE "]]..sel_items[i].file_out..[["]])
-        local new_chunk = sel_items[i].chunk:gsub('({.-})', function() return r.genGuid() end)
-        r.SetItemStateChunk(sel_items[i].item, new_chunk, false)
+        local new_source = r.PCM_Source_CreateFromFile(sel_items[i].file_out)
+        r.SetMediaItemTake_Source(sel_items[i].take, new_source)
+        -- sel_items[i].chunk = sel_items[i].chunk:gsub([[FILE ".+"]], [[FILE "]]..sel_items[i].file_out..[["]])
+        -- local new_chunk = sel_items[i].chunk:gsub('({.-})', function() return r.genGuid() end)
+        -- r.SetItemStateChunk(sel_items[i].item, new_chunk, false)
       end
     end
 
