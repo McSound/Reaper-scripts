@@ -20,7 +20,6 @@ local sep = package.config:sub(1,1)
 local reaper_path = r.GetResourcePath()
 local proj_media_path = r.GetProjectPath()
 
-
 function Msg(str) r.ShowConsoleMsg(tostring(str) .. "\n") end
 
 function round(num, numDecimalPlaces)
@@ -275,9 +274,11 @@ function Main()
 
     for i= #sel_items, 1, -1 do
       if sel_items[i].ptr_num~=-1 then
-        sel_items[i].chunk = sel_items[i].chunk:gsub([[FILE ".+"]], [[FILE "]]..sel_items[i].file_out..[["]])
-        local new_chunk = sel_items[i].chunk:gsub('({.-})', function() return r.genGuid() end)
-        r.SetItemStateChunk(sel_items[i].item, new_chunk, false)
+        local new_source = r.PCM_Source_CreateFromFile(sel_items[i].file_out)
+        r.SetMediaItemTake_Source(sel_items[i].take, new_source)
+        -- sel_items[i].chunk = sel_items[i].chunk:gsub([[FILE ".+"]], [[FILE "]]..sel_items[i].file_out..[["]])
+        -- local new_chunk = sel_items[i].chunk:gsub('({.-})', function() return r.genGuid() end)
+        -- r.SetItemStateChunk(sel_items[i].item, sel_items[i].chunk, false)
       else
         r.DeleteTrackMediaItem(sel_items[i].track, sel_items[i].item)
       end
