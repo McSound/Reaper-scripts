@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="McSound Scripts" commit="7203fbe8a5cf3a622b729a86de14dc66e96e9d39">
+<index version="1" name="McSound Scripts" commit="1333984bd6ebf44fb425821b4c1dbf29c52dde6c">
   <category name="EnvoyLope">
     <reapack name="McS - EnvoyLope - Copy Envelopes under Razors to the Track under mouse cursor.lua" type="script" desc="McS - EnvoyLope - Copy Envelopes under Razors to the Track under mouse cursor">
       <version name="1.08" author="McSound" time="2026-03-18T21:28:18Z">
@@ -118,6 +118,11 @@
     <reapack name="McS - FFMPEG - Replace Audio in Video.lua" type="script" desc="McS - FFMPEG - Replace Audio in Video">
       <version name="1.0" author="McSound" time="2026-04-28T13:52:13Z">
         <source main="main">https://github.com/McSound/Reaper-scripts/raw/97b65aef7ddfee6f61506eba011861e7187c1007/FFMPEG%20Utils/McS%20-%20FFMPEG%20-%20Replace%20Audio%20in%20Video.lua</source>
+      </version>
+    </reapack>
+    <reapack name="McS - FFMPEG - Take 1 Frame Snapshot from Video.lua" type="script" desc="McS - FFMPEG - Take 1 Frame Snapshot from Video">
+      <version name="1.0" author="McSound" time="2026-06-04T14:26:52Z">
+        <source main="main">https://github.com/McSound/Reaper-scripts/raw/1333984bd6ebf44fb425821b4c1dbf29c52dde6c/FFMPEG%20Utils/McS%20-%20FFMPEG%20-%20Take%201%20Frame%20Snapshot%20from%20Video.lua</source>
       </version>
     </reapack>
   </category>
