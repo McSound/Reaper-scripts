@@ -1,6 +1,6 @@
  -- @description Monitor FX and Item's params Toolbar
  -- @author McSound
- -- @version 1.0
+ -- @version 1.01
  -- @repository https://github.com/McSound/Reaper-scripts/raw/master/index.xml
  -- @licence GPL v3
  
@@ -3096,7 +3096,7 @@ function restrict_sel_items_st_en_to_source()
         local take_off = r.GetMediaItemTakeInfo_Value(take, "D_STARTOFFS")
         local playrate = r.GetMediaItemTakeInfo_Value(take,"D_PLAYRATE")
         local source = r.GetMediaItemTake_Source(take)
-        local source_ln = r.GetMediaSourceLength(source)        
+        local source_ln = r.GetMediaSourceLength(source)
         if take_off < 0 then
           local val = abs(take_off/playrate)
           if fadein/2 > val then
@@ -3127,9 +3127,9 @@ function restrict_sel_items_st_en_to_source()
           r.SetMediaItemTakeInfo_Value(take, "D_STARTOFFS", take_off)
         end
 
-        if loop==0 and ln > source_ln/playrate then
+        if loop==0 and ln > (source_ln-take_off)/playrate then
 
-          local val = ln - source_ln/playrate
+          local val = ln - (source_ln-take_off)/playrate
           if fadeout/2 > val then
             fadeout = fadeout - val
             fadeout_auto = fadeout
